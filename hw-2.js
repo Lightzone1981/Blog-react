@@ -37,7 +37,7 @@ var faculties = [
 ];
 var getAllSubjects = function (faculties) {
     return faculties.reduce(function (res, faculty) {
-        return (res = __spreadArray(__spreadArray([], res, true), faculty.subjects, true));
+        return res = __spreadArray(__spreadArray([], res, true), faculty.subjects, true);
     }, []).join(", ");
 };
 console.log("List of all subjects on university: ".concat(getAllSubjects(faculties)));

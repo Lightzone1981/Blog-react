@@ -36,7 +36,7 @@ const faculties: Array<IFaculty> = [
 
 const getAllSubjects = (faculties: Array<IFaculty>): string =>
 	faculties.reduce((res: Array<string>, faculty: IFaculty) =>
-		(res = [...res, ...faculty.subjects]),[]).join(", ");
+		res = [...res, ...faculty.subjects],[]).join(", ");
 
 console.log(`List of all subjects on university: ${getAllSubjects(faculties)}`);
 
