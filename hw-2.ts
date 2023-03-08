@@ -119,10 +119,20 @@ interface IProduct{
     name: string,
     price: number,
     currency: string,
-    ingredients: Array<string>,
+    ingredients: Array<keyof typeof IIngr>,
     type: string,
     available: boolean,
 };
+
+enum IIngr {
+	flour = "flour",
+	beef = "beef",
+	salad = "salad",
+	cheese = "cheese",
+	sauce = "sauce",
+	cucumber = "cucumber"
+}
+
 
 const products: Array<IProduct> = [
 	{
