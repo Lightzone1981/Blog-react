@@ -119,20 +119,33 @@ interface IStatistic {
 // }
 
 const getAgeStatistic = (users: IUser[]): IStatistic => {
-    return {
-        avgAge: users.reduce((acc: number, user: IUser) => acc += user.age, 0) / users.length,
-        over18: users.reduce((acc: number, user: IUser) => user.age> 18? acc++: acc, 0),
-        over30: users.reduce((acc: number, user: IUser) => user.age> 30? acc++: acc, 0),
-        over40: users.reduce((acc: number, user: IUser) => user.age> 40? acc++: acc, 0)
-    }
+    const ageStat =  users.reduce((res: IStatistic, elem: IUser) => {
+        res.avgAge = res.avgAge + elem.age
+        if (elem.age >18) res.over18++
+        if (elem.age >30) res.over30++
+        if (elem.age >40) res.over40++
+        return res
+    }, {
+        avgAge: 0,
+        over18: 0,
+        over30: 0,
+        over40: 0,
+    })
+    ageStat.avgAge = ageStat.avgAge / users.length
+    return ageStat
 }
 
 console.log(getAgeStatistic(users3))
 
+
 const getObject = (users3:IUser[]):any => {
-    return users3.reduce((acc, el: IUser, arr: IUser[]) => {
-        
-        return el.last_name[0] key in acc? acc[el.last_name[0]]: arr.map():acc
-        }
+    return users3.reduce((acc:any, el: IUser):any => {
+        const { last_name } = el
+        const firstLetter = last_name ? last_name[0].toLowerCase() : ''
+        const accValue = acc[firstLetter] || []
+        accValue.push(el.last_name)
+        return ({...acc, [firstLetter]:accValue})
     },{})
 }
+
+console.log(getObject(users3))

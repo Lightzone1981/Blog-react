@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -95,12 +106,42 @@ var getSortedUsers = function (users, sortAge) {
     }).sort(function (a, b) { return a.age - b.age; });
 };
 console.log(getSortedUsers(users3, 35));
+// const getAgeStatistic = (users: IUser[]): IStatistic => {
+//     return {
+//         avgAge: users.reduce((acc: number, user: IUser) => acc += user.age, 0) / users.length,
+//         over18: users.reduce((acc: number, user: IUser) => user.age> 18? acc++: acc, 0),
+//         over30: users.reduce((acc: number, user: IUser) => user.age> 30? acc++: acc, 0),
+//         over40: users.reduce((acc: number, user: IUser) => user.age> 40? acc++: acc, 0)
+//     }
+// }
 var getAgeStatistic = function (users) {
-    return {
-        avgAge: users.reduce(function (acc, user) { return acc += user.age; }, 0) / users.length,
-        over18: users.reduce(function (acc, user) { return user.age > 18 ? acc += user.age : acc; }, 0),
-        over30: users.reduce(function (acc, user) { return user.age > 30 ? acc += user.age : acc; }, 0),
-        over40: users.reduce(function (acc, user) { return user.age > 40 ? acc += user.age : acc; }, 0)
-    };
+    var ageStat = users.reduce(function (res, elem) {
+        res.avgAge = res.avgAge + elem.age;
+        if (elem.age > 18)
+            res.over18++;
+        if (elem.age > 30)
+            res.over30++;
+        if (elem.age > 40)
+            res.over40++;
+        return res;
+    }, {
+        avgAge: 0,
+        over18: 0,
+        over30: 0,
+        over40: 0
+    });
+    ageStat.avgAge = ageStat.avgAge / users.length;
+    return ageStat;
 };
 console.log(getAgeStatistic(users3));
+var getObject = function (users3) {
+    return users3.reduce(function (acc, el) {
+        var _a;
+        var last_name = el.last_name;
+        var firstLetter = last_name ? last_name[0].toLowerCase() : '';
+        var accValue = acc[firstLetter] || [];
+        accValue.push(el.last_name);
+        return (__assign(__assign({}, acc), (_a = {}, _a[firstLetter] = accValue, _a)));
+    }, {});
+};
+console.log(getObject(users3));
