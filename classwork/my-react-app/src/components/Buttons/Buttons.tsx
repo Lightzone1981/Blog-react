@@ -9,7 +9,7 @@ const Buttons = () => {
                 <div style={{flex: 1, display: 'flex', justifyContent: 'center'}}>
                     <Button
                     content='Primary'
-                    isActive={true}
+                    isActive={false}
                     callback={() => console.log(1)}
                     buttonStyle={{color: 'white', backgroundColor: 'blue'}}
                     />

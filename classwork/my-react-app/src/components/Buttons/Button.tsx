@@ -10,7 +10,7 @@ const Button = ({content, isActive, callback, buttonStyle}: IButton) => {
             className="custom-button"
             disabled={!isActive}
             onClick={() => callback()}
-            style={buttonStyle}
+            style={{opacity: isActive ? 1 : 0.5, ...buttonStyle}}
         >
             {content}
         </button>
