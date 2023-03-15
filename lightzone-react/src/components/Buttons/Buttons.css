@@ -1,18 +1,28 @@
 .buttons-wrapper{
     background-color: #dadada;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap:2rem;
-    width: 900px;
+    grid-template-areas: 
+    'b1 b1 b1'
+    'b2 b3 b4'
+    'b5 b6 b7'
+    'b8 b9 b10'
+    ;
     margin: 0 auto;
-    padding: 1rem;
+    width: 60%;
+    min-width: 500px;
+    padding: 2rem;
 }
+
 .title{
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: b1;
     width: 100%;
     color:#6b6b6b;
 }
+
 .button{
-    width: 275px;
     padding: 1rem;
     font-size: 1.5rem;
     border:none;
@@ -24,9 +34,4 @@
     transform: scale(1.05);
     transition: 0.3s;
     cursor: pointer;
-}
-
-.button[disabled] {
-    opacity: 0.5;
-    border: 1px solid #000;
 }

@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App button-text = 'button-1' />
+    <App/>
   </React.StrictMode>
 );
 

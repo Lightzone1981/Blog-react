@@ -1,18 +1,34 @@
+import { transform } from '@babel/core';
 import './Buttons.css'
 
+interface IButton{
+    content: string,
+    bgcolor: string,
+    color: string,
+    gridAreaName: string,
+    isActive: boolean,
+    callback: Function,
+}
 
-const Button = (props: any) => {
+
+const Button = ({content, bgcolor, color, gridAreaName, isActive, callback}: IButton) => {
     return (
         <button
             className='button'
             type='button'
-            disabled={props.disabled}
-            onClick={props.callback}
+            disabled={!isActive}
+            onClick={() => callback()}
+            title={isActive ? '' : `I'm disabled :(`}
             style={{
-                backgroundColor: props.bgcolor,
-                color: props.color
+                backgroundColor: bgcolor,
+                color: color,
+                gridArea: gridAreaName,
+                opacity: isActive ? 1 : 0.3,
+                border: isActive ? 'none' : '1px solid #333',
+                cursor: isActive ? 'pointer' : 'default',
+                transform: isActive ? '' : 'scale(1)',
             }}>
-            {props.content}
+            {content}
       </button>
     )
   }
