@@ -1,0 +1,32 @@
+.tabs{
+    list-style-type: none;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #adadad;
+}
+
+.tabs__item{
+    min-width: 5rem;
+    text-align: center;
+    padding:0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:rgb(15, 15, 15);
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 1rem 2rem 1.5rem 2rem;
+    border-bottom: 2px solid #fff;
+}
+
+.tabs__item:hover{
+    color: blue;
+}
+
+.tabs__item--active{
+    border-color: #333;
+}
+
+.tabs__item--disabled, .tabs__item--disabled:hover{
+    color: #adadad;
+    cursor: default;
+}

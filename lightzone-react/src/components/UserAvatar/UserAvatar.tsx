@@ -14,7 +14,7 @@ const UserAvatar = ({ username }: IProps) => {
         }}>
             <div className="user-avatar__short-name"
             style={{
-                color: 'blue',
+                color: '#fff',
                 fontWeight: 'bold',
             }}>
                 {username.split('_').reduce((res,el)=>res+el[0].toUpperCase(),'')}

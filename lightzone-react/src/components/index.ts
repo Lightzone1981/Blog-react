@@ -1,1 +1,6 @@
 export * from './Buttons'
+export * from './UserAvatar'
+export * from './Counter'
+export * from './Tabs'
+export * from './BurgerMenu'
+export * from './SearchBar'

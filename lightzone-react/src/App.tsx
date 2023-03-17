@@ -1,18 +1,21 @@
-import React from 'react';
-import { Buttons } from './components'
-import { UserAvatar } from './components/UserAvatar';
+import { UserAvatar } from './components';
+import { Tabs } from './components'
+import {BurgerMenu} from './components'
+import {SearchBar} from './components'
+import './App.css'
 
 const App = () => {
+
   return (
-    <>
-    <div className="buttons-container">
-     <Buttons/>
+    <div className="wrapper">
+      <header className="main-header">
+      <BurgerMenu/>
+      <SearchBar/>
+      <UserAvatar username='Evgeniy_Lebedevski'/>
+      </header>
+
+     <Tabs/> 
     </div>
-    
-    <UserAvatar username='Evgeniy_Lebedevski'/>
-    <UserAvatar username='Vasiliy_Nikolaevich_Pupkin'/>
-    
-    </>
   )
 }
 
