@@ -3,13 +3,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap:2rem;
-    grid-template-areas: 
-    'b1 b1 b1'
-    'b2 b3 b4'
-    'b5 b6 b7'
-    'b8 b9 b10'
-    ;
-    margin: 0 auto;
     width: 60%;
     min-width: 500px;
     padding: 2rem;
@@ -17,7 +10,6 @@
 
 .title{
     font-family: Arial, Helvetica, sans-serif;
-    grid-area: b1;
     width: 100%;
     color:#6b6b6b;
 }

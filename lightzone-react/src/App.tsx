@@ -1,4 +1,4 @@
-import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar } from './components';
+import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar,Buttons, Calculator} from './components';
 import './App.css'
 
 const App = () => {
@@ -28,7 +28,13 @@ const App = () => {
       <Input type='text' name='input-4' label='Title:' placeholder='Text ...' isEnable={false} />
       <br/>
       <br />
-      <TextArea rows={10} label = 'Comment:' placeholder = 'Add your text ...' isEnable={true} />
+      <TextArea rows={10} label='Comment:' placeholder='Add your text ...' isEnable={true} />
+      <br/>
+      <br/>
+      <Buttons /> 
+      <br/>
+      <br/>
+      <Calculator/>
     </div>
   )
 }

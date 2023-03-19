@@ -5,13 +5,12 @@ interface IButton{
     content: string,
     bgcolor: string,
     color: string,
-    gridAreaName: string,
     isActive: boolean,
     callback: Function,
 }
 
 
-const Button = ({content, bgcolor, color, gridAreaName, isActive, callback}: IButton) => {
+const Button = ({content, bgcolor, color, isActive, callback}: IButton) => {
     return (
         <button
             className='button'
@@ -22,7 +21,6 @@ const Button = ({content, bgcolor, color, gridAreaName, isActive, callback}: IBu
             style={{
                 backgroundColor: bgcolor,
                 color: color,
-                gridArea: gridAreaName,
                 opacity: isActive ? 1 : 0.3,
                 border: isActive ? 'none' : '1px solid #333',
                 cursor: isActive ? 'pointer' : 'default',
