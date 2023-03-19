@@ -1,4 +1,4 @@
-import { Input, UserAvatar, Tabs, BurgerMenu, SearchBar } from './components';
+import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar } from './components';
 import './App.css'
 
 const App = () => {
@@ -25,7 +25,10 @@ const App = () => {
         required={true} error='Password must contain at least 8 characters' isEnable={true} />
       <br/>
       <br/>
-      <Input type='text' name='input-4' label='Title:' placeholder='Text...' isEnable={false} />
+      <Input type='text' name='input-4' label='Title:' placeholder='Text ...' isEnable={false} />
+      <br/>
+      <br />
+      <TextArea rows={10} label = 'Comment:' placeholder = 'Add your text ...' isEnable={true} />
     </div>
   )
 }

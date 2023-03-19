@@ -1,0 +1,27 @@
+
+.textarea{
+    min-width: 30rem;
+    width: 50%;
+    resize: none;
+    border: 1px solid #d3d3d3;
+    outline: 0;
+    font-size: 1.2rem;
+    padding:1rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.textarea::placeholder{
+    color: #d3d3d3;
+}
+
+.textarea:focus{
+    border: 1px solid #222;
+}
+
+.textarea__label{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.3rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

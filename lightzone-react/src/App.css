@@ -2,6 +2,7 @@
     padding: 1rem;
 }
 .main-header{
+    min-width: 45rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

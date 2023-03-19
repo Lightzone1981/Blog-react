@@ -68,9 +68,10 @@
 }
 
 .search-bar__button--erase{
+    flex-shrink: 2;
     position: relative;
-    width: 4rem;
-    height: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
     background-color: #95a4e7;
     border: none;
     cursor: pointer;

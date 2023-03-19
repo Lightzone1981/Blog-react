@@ -5,6 +5,7 @@ import Tab from './Tab'
 interface ITabsArr{
     id:number,
     label: string,
+    disabled?:boolean,
 }
 
 const Tabs = () => {
@@ -12,14 +13,14 @@ const Tabs = () => {
         { id:1, label: 'All'},
         { id:2, label: 'My favorites'},
         { id:3, label: 'Popular'},
-        { id:4, label: 'Disabled tab'},
+        { id:4, label: 'Disabled tab', disabled: true},
     ]
     
     const [active, setTab] = useState('All');
     return (
         <ul className='tabs'>
             {tabsArr.map(el => <Tab key={el.id} label={el.label} active={active}
-                callback={() => setTab(el.label)} enable={el.id === 4 ? false:true} />)}
+                callback={() => setTab(el.label)} disabled={el.disabled} />)}
         </ul>
     )
 }

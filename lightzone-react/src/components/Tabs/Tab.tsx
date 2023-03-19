@@ -1,13 +1,16 @@
 interface ITub{
-    label: string, active: string, callback: Function, enable: boolean 
+    label: string,
+    active: string,
+    callback: Function,
+    disabled?: boolean 
 }
 
-const Tab = ({ label, active, callback, enable }:ITub ) => {
+const Tab = ({ label, active, callback, disabled }:ITub ) => {
     return (
         <li className={
-            enable? label !== active ? 'tabs__item' : 'tabs__item tabs__item--active': 'tabs__item tabs__item--disabled'
+            !disabled? label !== active ? 'tabs__item' : 'tabs__item tabs__item--active': 'tabs__item tabs__item--disabled'
         }
-        onClick={enable?() => callback():()=>{}} >
+        onClick={!disabled?() => callback():()=>{}} >
             {label}
         </li>
     )
