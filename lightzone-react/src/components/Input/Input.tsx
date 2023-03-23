@@ -12,10 +12,11 @@ interface IInput{
 }
 
 const Input = ({ type, name, label, placeholder, isEnable, required, error }: IInput) => {
-    const [text,setText] = useState('')
+    const [text, setText] = useState('')
+    const labelComponent = label? <label className='input__label' htmlFor={name}>{required?'* '+label:label}</label>:''
     return (
         <>
-            <label className='input__label' htmlFor={name}>{required?'* '+label:label}</label>
+            {labelComponent}
             <input className='input' name={name} type={type} placeholder={placeholder}
                 data-empty={text === '' ? 'true' : 'false'}
                 data-valid={required && (type ==='password' && text.length>0 && text.length<8)? 'false' : 'true'}

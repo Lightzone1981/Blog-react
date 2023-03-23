@@ -1,11 +1,15 @@
-import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar,Buttons, Calculator} from './components';
+import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar, Buttons, Calculator, Wrapper, PostsGrid} from './components';
 import './App.css'
+import { mockDataPosts} from './constants/posts-constants'
+import { IPostInfo } from './types';
+
+
 
 const App = () => {
-
+const el = <UserAvatar username='A_B'/>
   return (
     <div className="wrapper">
-      <header className="main-header">
+      {/* <header className="main-header">
       <BurgerMenu/>
       <SearchBar/>
       <UserAvatar username='Evgeniy_Lebedevski'/>
@@ -35,6 +39,20 @@ const App = () => {
       <br/>
       <br/>
       <Calculator/>
+      <br/>
+      <br/>
+      <Wrapper>{el}</Wrapper>
+      <Wrapper>{'Привет'}</Wrapper>
+      <Wrapper>{'Привет'}</Wrapper>
+      <Wrapper>{'Привет'}</Wrapper>
+      <Wrapper>{'Привет'}</Wrapper>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br /> */}
+      
+      <PostsGrid/>
     </div>
   )
 }

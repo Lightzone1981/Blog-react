@@ -11,9 +11,10 @@ interface ITextArea{
 
 const TextArea = ({rows, cols, label, placeholder, isEnable}:ITextArea) => {
     const [text, setText] = useState('')
+    const labelComponent = label? <p className='textarea__label'>{label}</p>:''
     return (
         <>
-        <p className='textarea__label'>{label}</p>
+        {labelComponent}
             <textarea className='textarea' rows={rows} cols={cols} placeholder={placeholder} disabled={!isEnable}
             onChange={(e)=>setText(e.target.value)}/>
         </>
