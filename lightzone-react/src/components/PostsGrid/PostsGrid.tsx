@@ -10,7 +10,6 @@ const PostsGrid = () => {
 	});
 	useEffect(() => {
 		function handleResize() {
-			console.log("+");
 			setWindowSize({
 				height: window.innerHeight,
 				width: window.innerWidth,
