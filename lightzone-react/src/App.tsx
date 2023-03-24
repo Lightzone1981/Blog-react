@@ -1,12 +1,12 @@
-import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar, Buttons, Calculator, Wrapper, PostsGrid} from './components';
+import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar, Buttons, Calculator, Wrapper, PostsGrid, Timer, Registration} from './components';
 import './App.css'
-import { mockDataPosts} from './constants/posts-constants'
+import { mockDataPosts } from './constants/posts-constants';
 import { IPostInfo } from './types';
+import getRowsArray from './utils/getRowsArray';
 
 
 
 const App = () => {
-const el = <UserAvatar username='A_B'/>
   return (
     <div className="wrapper">
       {/* <header className="main-header">
@@ -52,6 +52,8 @@ const el = <UserAvatar username='A_B'/>
       <br/>
       <br /> */}
       
+      {/* <Timer/> */}
+      <Registration/>
       <PostsGrid/>
     </div>
   )

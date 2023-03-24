@@ -1,4 +1,4 @@
-import { IPostInfo, IPostViews}  from '../types'
+import { IPostInfo, IPostViews, IRowViews}  from '../types'
 
 export const mockDataPosts: Array<IPostInfo> = [{
     id: 13,
@@ -103,6 +103,12 @@ export const mockDataPosts: Array<IPostInfo> = [{
 
 
 export const POST_VIEWS:IPostViews = {
+    VIEW1: 'view1',
+    VIEW2: 'view2',
+    VIEW3: 'view3',
+}
+
+export const ROW_VIEWS:IRowViews = {
     VIEW1: 'view1',
     VIEW2: 'view2',
     VIEW3: 'view3',

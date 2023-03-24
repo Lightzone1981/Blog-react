@@ -14,6 +14,12 @@ export interface IPostViews {
     VIEW3: string,
 }
 
+export interface IRowViews {
+    VIEW1: string,
+    VIEW2: string,
+    VIEW3: string,
+}
+
 export interface IPost {
     postObj: IPostInfo,
     postView:string
