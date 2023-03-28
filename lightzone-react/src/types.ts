@@ -22,7 +22,7 @@ export interface IRowViews {
 
 export interface IPost {
     postObj: IPostInfo,
-    postView:string
+    postView?:string
 }
 
 export interface IRes {

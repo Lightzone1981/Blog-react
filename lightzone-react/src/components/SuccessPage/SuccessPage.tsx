@@ -1,12 +1,8 @@
-import { MainFooter } from "../MainFooter";
-import { MainHeader } from "../MainHeader"
 import InfoForm from '../InfoForm/InfoForm';
 import { IMessage } from '../../types';
 
 const SuccessPage = ({ message }:IMessage) => {
     return (
-        <>
-        <MainHeader />
         <div className="page-container">
             <main className="main">
                 <div className="title-wrapper">
@@ -15,9 +11,7 @@ const SuccessPage = ({ message }:IMessage) => {
                 </div>
                 <InfoForm message={message} />
             </main>
-            <MainFooter/>
         </div>
-        </>
     )
 }
 export default SuccessPage

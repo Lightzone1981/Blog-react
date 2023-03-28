@@ -12,6 +12,8 @@ const SearchBar = () => {
             <input className='search-bar__input' type='text' placeholder='Search...' value={text} onChange={(e)=> setText(e.target.value)}/>
             <ClearButton buttonType='erase' callback={() => {setText('')}} />
             <div className="search-bar__submit-wrapper">
+                <img className="search-bar__submit-icon" src={"./icons/search-icon.svg"} alt="search icon" />
+
                 <input className='search-bar__submit' type='submit' value='' onClick={(e) => {
                     e.preventDefault();
                     console.log(text);

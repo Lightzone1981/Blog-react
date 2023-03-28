@@ -8,8 +8,6 @@ import getPagesPostsArray from '../../utils/getPagesPostsArray';
 import { mockDataPosts, ROW_VIEWS} from "../../constants/posts-constants";
 import "./PostGrid.css";
 
-
-
 const PostsGrid = () => {
 	const [windowSize, setWindowSize] = useState({
 		height: window.innerHeight,
@@ -17,7 +15,6 @@ const PostsGrid = () => {
 	});
 
 	const postsPagesArray = getPagesPostsArray(mockDataPosts)
-	console.log(postsPagesArray)
 
 	const handlePaginationClick = (e: any) => {
 		if (e.target.id.split('-')[0] === 'item') {
@@ -71,7 +68,6 @@ const PostsGrid = () => {
 	if (!allPosts.length) {
 		return (
 			<Loader/>
-			// <p className="loader" style={{ fontSize: '4rem', padding: '2rem' }}>Loading...</p>
 		)
 	}
 

@@ -6,16 +6,14 @@ import { Tabs } from "../Tabs";
 const MainPage = () => {
     return (
         <>
-        <MainHeader />
         <div className="page-container">
-                <main className="main">
-                    <Tabs/>
-                    <div className="title-wrapper">
-                        <h1 className="page-title">Blog</h1>
-                    </div>
+            <main className="main">
+                <div className="title-wrapper">
+                    <h1 className="page-title">Blog</h1>
+                </div>
+                <Tabs/>
                 <PostsGrid />
             </main>
-            <MainFooter/>
         </div>
         </>
     )

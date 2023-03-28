@@ -8,7 +8,7 @@ const MainHeader = () => {
         <header className="main-header">
             <BurgerMenu/>
             <SearchBar/>
-            <UserAvatar username='Evgeniy_Lebedevski'/>
+            <UserAvatar username=''/>
         </header>
     )
 }

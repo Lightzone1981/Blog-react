@@ -6,20 +6,18 @@ interface IProps{
 
 const UserAvatar = ({ username }: IProps) => {
     return (
-        <div className="user-avatar"
-        style={{
-            backgroundColor: 'blue',
-            color: '#fff',
-            fontFamily: 'Arial'
-        }}>
-            <div className="user-avatar__short-name"
-            style={{
-                color: '#fff',
-                fontWeight: 'bold',
-            }}>
-                {username.split('_').reduce((res,el)=>res+el[0].toUpperCase(),'')}
-            </div>
-            {username.replaceAll('_',' ')}
+        <div className="user-avatar">
+            {username === "" ? 
+                <button className="user-avatar__button">
+                    <img className="user-avatar__button-icon" src={"./icons/user-icon.svg"} alt="user icon" />
+                </button>
+                : <>
+                    <div className="user-avatar__short-name">
+                        {username.split('_').reduce((res,el)=>res+el[0].toUpperCase(),'')}
+                   </div>
+                    {username.replaceAll('_', ' ')}
+                </>
+            }
         </div>
     )
   }

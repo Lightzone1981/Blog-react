@@ -1,29 +1,31 @@
 .search-bar{
     width: 10rem;
-    height: 4rem;
+    height: 5.25rem;
     flex-grow: 1;
     display: flex;
 }
 
 .search-bar__input{
-    background-color: #95a4e7;
+    background-color: #5360CD;
     flex-grow: 1;
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: 2rem;
+    font-size: 1rem;
     outline: none;
     border: none;
+    color:#fff;
 }
 
 .search-bar__input::placeholder{
-    color:#c2cdff;
+    color:#fff;
+    opacity: 0.5;
 }
     .search-bar__input:focus::placeholder{
     color: #fff;
 }
 
 .search-bar__submit{
-    width: 4rem;
-    height: 4rem;
+    width: 5.25rem;
+    height: 5.25rem;
     outline: none;
     border: none;
     background-color: transparent;
@@ -31,40 +33,23 @@
    
 }
 .search-bar__submit:focus{
-    background-color: rgb(81, 81, 252);
-}
-
-.search-bar__submit-wrapper:hover{
-    background-color: rgb(81, 81, 252);
+    background-color: #5360CD;
 }
 
 .search-bar__submit-wrapper{
     position: relative;
-    background-color: blue;
-    border-right: 1px solid #95a4e7;
+    background-color: #2231AA;
+    border-right: 1px solid #5360CD;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.search-bar__submit-wrapper::before{
-    content:'';
+.search-bar__submit-icon{
     position: absolute;
-    top:30%;
-    left:30%;
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
-    border:2px solid #fff;
-}
-.search-bar__submit-wrapper::after{
-    content:'';
-    position: absolute;
-    top:59%;
-    left:53%;
-    width: 15%;
-    height: 2px;
-    background-color: #fff;
-    transform: rotate(45deg);
+    top:33%;
+    left:35%;
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 .search-bar__button--erase{
@@ -72,7 +57,7 @@
     position: relative;
     min-width: 4rem;
     min-height: 4rem;
-    background-color: #95a4e7;
+    background-color: #5360CD;
     border: none;
     cursor: pointer;
     outline: 0;
@@ -93,8 +78,4 @@
 
 .search-bar__button--erase::after{
     transform: rotate(-45deg);
-}
-
-.search-bar__button--erase:hover::before,.search-bar__button--erase:hover::after {
-    width: 35%;
 }
