@@ -13,7 +13,6 @@ const Tabs = () => {
         { id:1, label: 'All'},
         { id:2, label: 'My favorites'},
         { id:3, label: 'Popular'},
-        { id:4, label: 'Disabled tab', disabled: true},
     ]
     
     const [active, setTab] = useState('All');

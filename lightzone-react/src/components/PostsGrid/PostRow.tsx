@@ -145,7 +145,7 @@ const PostRow = (rowArr:IPostInfo[], firstIndex:number, windowSize: any) => {
                     <div className="post-row-main" style={{ width: "100%" }}>
                         <Post
                             postObj={rowArr[0]}
-                            postView={firstIndex === 0 ? POST_VIEWS.VIEW1 : POST_VIEWS.VIEW2}
+                            postView={POST_VIEWS.VIEW2}
                         />
                         <Post
                             postObj={rowArr[1]}
@@ -175,7 +175,7 @@ const PostRow = (rowArr:IPostInfo[], firstIndex:number, windowSize: any) => {
                 <div className="post-row-main" style={{ width: "100%" }}>
                     <Post
                         postObj={rowArr[0]}
-                        postView={POST_VIEWS.VIEW3}
+                        postView={POST_VIEWS.VIEW2}
                     />
                 </div>
             </div>

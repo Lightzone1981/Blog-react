@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.sign-in-form{
+    list-style-type: none;
+    font-family: Inter;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 39rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #DADADA;
+    padding: 2rem 3rem;
+}
+.sign-up-form-text{
+    font-size: 1rem;
+    text-align: center;
+    color:#8D8E97;
+}
+
+.form-text-link{
+    text-decoration: none;
+    color:#2231AA;
+    padding-left: 0.5rem;
+    outline: 0;
+}
+
+.form-text-link--black{
+    color:#313037;
+    padding-bottom: 3rem;
+}
+
+.form-text-link:hover, .form-text-link:focus{
+    color:#5360CD;
+}
+
+@media (max-width: 768px) {
+    .registration{
+    max-width: 100%;
+    }
+}

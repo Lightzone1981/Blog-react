@@ -1,0 +1,19 @@
+.button{
+    padding: 1rem 2rem;
+    font-size: 1.12rem;
+    border:none;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.button-submit{
+    background-color:#2231AA;
+    color:#fff;
+    outline: 0;
+}
+
+.button:hover, .button-submit:focus{
+    background-color:#5360CD;
+    transition: 0.3s;
+    cursor: pointer;
+}

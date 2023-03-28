@@ -1,8 +1,8 @@
 .tabs{
-    min-width: 40rem;
+    width: 100%;
     list-style-type: none;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inter;
     border-bottom: 1px solid #adadad;
 }
 
@@ -10,24 +10,24 @@
     min-width: 5rem;
     text-align: center;
     padding:0 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color:rgb(15, 15, 15);
+    font-size: 1rem;
+    font-weight: 600;
+    color:#313037;
     cursor: pointer;
     transition: 0.3s;
-    padding: 1rem 2rem 1.5rem 2rem;
-    border-bottom: 2px solid #fff;
+    padding: 1rem 4rem 1.8rem 4rem;
+    border-bottom: 2px solid #F3F3F3;
 }
 
 .tabs__item:hover{
-    color: blue;
+    color: #2231AA;
 }
 
 .tabs__item--active{
-    border-color: #333;
+    border-color: #313037;
 }
 
 .tabs__item--disabled, .tabs__item--disabled:hover{
-    color: #adadad;
+    color: #8D8E97;
     cursor: default;
 }

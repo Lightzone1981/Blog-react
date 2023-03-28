@@ -1,7 +1,7 @@
-import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar, Buttons, Calculator, Wrapper, PostsGrid, Timer, Registration} from './components';
+import { Input, TextArea, UserAvatar, Tabs, BurgerMenu, SearchBar, Buttons, Calculator, Wrapper, PostsGrid, Timer, SignUpPage, SignInPage, RegistrationConfirmationPage, SuccessPage, MainPage} from './components';
 import './App.css'
 import { mockDataPosts } from './constants/posts-constants';
-import { IPostInfo } from './types';
+import { IPostInfo, IMessage } from './types';
 import getRowsArray from './utils/getRowsArray';
 
 
@@ -53,8 +53,12 @@ const App = () => {
       <br /> */}
       
       {/* <Timer/> */}
-      <Registration/>
-      <PostsGrid/>
+      {/* <SignUpPage/> */}
+      {/* <SignInPage/> */}
+      {/* <RegistrationConfirmationPage message='Please activate your account with the activation link in the email: lightzone@tut.by. Please, check your email' /> */}
+      {/* <SuccessPage message='Email confirmed. Your registration is now completed'/> */}
+      <MainPage/>
+      {/* <PostsGrid/> */}
     </div>
   )
 }

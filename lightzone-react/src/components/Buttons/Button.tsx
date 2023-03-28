@@ -1,26 +1,23 @@
 import { transform } from '@babel/core';
-import './Buttons.css'
+import './Button.css'
 
 interface IButton{
+    className: string,
     content: string,
-    bgcolor: string,
-    color: string,
     isActive: boolean,
     callback: Function,
 }
 
 
-const Button = ({content, bgcolor, color, isActive, callback}: IButton) => {
+const Button = ({className, content, isActive, callback}: IButton) => {
     return (
         <button
-            className='button'
+            className={className}
             type='button'
             disabled={!isActive}
-            onClick={() => callback()}
+            onClick={(e) => callback(e)}
             title={isActive ? '' : `I'm disabled :(`}
             style={{
-                backgroundColor: bgcolor,
-                color: color,
                 opacity: isActive ? 1 : 0.3,
                 border: isActive ? 'none' : '1px solid #333',
                 cursor: isActive ? 'pointer' : 'default',

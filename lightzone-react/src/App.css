@@ -1,9 +1,51 @@
-.wrapper{
-    padding: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body{
+    background-color: #F3F3F3;
 }
-.main-header{
-    min-width: 45rem;
+
+.page-container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main{
+    width: 100%;
+    flex-grow: 1;
+    padding: 4.5rem 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap:4em;
     align-items: center;
+    justify-content: center;
 }
+
+.title-wrapper{
+    width: 100%;
+}
+
+.back-home-link{
+    font-family: inter;
+    text-decoration: none;
+    color:#313037;
+    transition: 0.3s;
+}
+
+.back-home-link:hover{
+    color:#5360CD;
+}
+
+.page-title{
+    padding-top:2rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: inter;
+    color: #313037;
+}
+
+/* @media (max-width:768px){
+    .main{
+       padding: 2rem; 
+    }
+} */

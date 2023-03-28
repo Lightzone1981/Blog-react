@@ -24,3 +24,18 @@ export interface IPost {
     postObj: IPostInfo,
     postView:string
 }
+
+export interface IRes {
+    arr: Array<IPostInfo[]>,
+    arrIndex: number
+}
+
+export interface IMessage{
+    message:string
+}
+
+export interface IPagination {
+    activeItem: number,
+    itemsCount: number,
+    callback: Function,
+}

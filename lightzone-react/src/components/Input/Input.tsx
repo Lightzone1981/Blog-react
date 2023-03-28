@@ -1,28 +1,41 @@
 import { useState } from 'react';
 import './Input.css'
+import { callbackify } from 'util';
 
 interface IInput{
     type: string,
-    name?: string,
+    name: string,
     label?: string,
     placeholder?: string,
     isEnable?: boolean,
-    required?: boolean,
-    error?:string,
+    isEmpty: boolean,
+    isValid:boolean,
+    isRequired?: boolean,
+    error?: string,
+    callback: Function
 }
 
-const Input = ({ type, name, label, placeholder, isEnable, required, error }: IInput) => {
-    const [text, setText] = useState('')
-    const labelComponent = label? <label className='input__label' htmlFor={name}>{required?'* '+label:label}</label>:''
+const Input = ({ type, name, label, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
+    const labelComponent = label? <label className='input__label' htmlFor={name}>{label}</label>:''
     return (
         <>
-            {labelComponent}
-            <input className='input' name={name} type={type} placeholder={placeholder}
-                data-empty={text === '' ? 'true' : 'false'}
-                data-valid={required && (type ==='password' && text.length>0 && text.length<8)? 'false' : 'true'}
-                required={required} disabled={!isEnable} onChange={(e)=>setText(e.target.value)}/>
-            <p className='input__error'>{
-                type!=='password'? required && error ? error : '': required && error && text.length<8? error: ''}</p>
+            <div className="input-container" key={name}>
+                {labelComponent}
+                <input 
+                    className='input'
+                    name={name}
+                    type={type}
+                    placeholder={placeholder}
+                    data-empty={isEmpty}
+                    data-valid={isValid}
+                    required={isRequired}
+                    disabled={!isEnable}
+                    onChange={(e) => { callback(e) }}
+                />
+                <p className='input__error'>
+                    {error}
+                </p>
+            </div>
         </>
     )
 }

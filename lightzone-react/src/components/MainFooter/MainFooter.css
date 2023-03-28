@@ -1,0 +1,14 @@
+.main-footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 2rem 0;
+    border-top: 1px solid #DADADA;
+
+}
+.copyright, .rights {
+    font-size: 1rem;
+    font-family: inter;
+    color: #8D8E97;
+}
