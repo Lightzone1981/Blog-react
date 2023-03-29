@@ -6,6 +6,7 @@
     border-bottom: 1px solid #adadad;
 }
 
+
 .tabs__item{
     min-width: 5rem;
     text-align: center;
@@ -37,7 +38,7 @@
 }
 
 .tabs[data-theme='dark'] .tabs__item--active{
-    border-color: #5360CD;
+    border-color: #fff;
 }
 
 .tabs__item--disabled, .tabs__item--disabled:hover{

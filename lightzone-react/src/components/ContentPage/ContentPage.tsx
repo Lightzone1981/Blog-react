@@ -1,7 +1,7 @@
 import { mockDataPosts} from "../../constants/posts-constants";
 import PostContent from "./PostContent";
 import { ThemeContext } from "../../contexts/themeContext";
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
 const ContentPage = () => {
     const { theme } = useContext(ThemeContext)
