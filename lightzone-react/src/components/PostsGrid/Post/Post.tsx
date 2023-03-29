@@ -1,6 +1,8 @@
 import { IPost } from "../../../types";
 import "./Post.css";
 import { POST_VIEWS } from "../../../constants/posts-constants";
+import { ThemeContext } from "../../../contexts/themeContext";
+import { useContext } from 'react';
 
 const dateFormat = (date: string): string => {
 	const dateArr = date.split("-");
@@ -49,10 +51,11 @@ const dateFormat = (date: string): string => {
 };
 
 const Post = ({ postObj, postView }: IPost) => {
+	const { theme } = useContext (ThemeContext)
 	const date = <p className="post__date">{dateFormat(postObj.date)}</p>;
 
 	const footer = (
-		<footer className="post-footer">
+		<footer className="post-footer" data-theme={`${theme}`}>
 			<img className="icon" src={"./icons/like-icon.svg"} alt="like icon" />
 			<span className="likes-count">20</span>
 			<img className="icon" src={"./icons/like-icon.svg"} alt="like icon" />
@@ -67,8 +70,8 @@ const Post = ({ postObj, postView }: IPost) => {
 	);
 
 	const view1 = (
-		<div key={postObj.id} className="post1">
-			<div className="post1__main">
+		<div key={postObj.id} className="post1" data-theme={`${theme}`}>
+			<div className="post1__main" >
 				<div className="post1__info-container">
 					{date}
 					<h2 className="post1__title">{postObj.title}</h2>
@@ -77,7 +80,6 @@ const Post = ({ postObj, postView }: IPost) => {
 				<div
 					className="post1__image-container"
 					style={{ background: `url(${postObj.image}) center/cover` }}>
-					{/* <img className='post1__img' src={postObj.image} alt='image' /> */}
 				</div>
 			</div>
 			{footer}
@@ -85,11 +87,10 @@ const Post = ({ postObj, postView }: IPost) => {
 	);
 
 	const view2 = (
-		<div key={postObj.id} className="post2">
+		<div key={postObj.id} className="post2" data-theme={`${theme}`}>
 			<div
 				className="post2__image-container"
 				style={{ background: `url(${postObj.image}) center/cover` }}>
-				{/* <img className='post2__img' src={postObj.image} alt='image' /> */}
 			</div>
 			{date}
 			<h2 className="post2__title">{postObj.title}</h2>
@@ -98,7 +99,7 @@ const Post = ({ postObj, postView }: IPost) => {
 	);
 
 	const view3 = (
-		<div key={postObj.id} className="post3">
+		<div key={postObj.id} className="post3" data-theme={`${theme}`}>
 			<div className="post3__main">
 				<div className="post3__info-container">
 					{date}
@@ -107,7 +108,6 @@ const Post = ({ postObj, postView }: IPost) => {
 				<div
 					className="post3__image-container"
 					style={{ background: `url(${postObj.image}) center/cover` }}>
-					{/* <img className='post3__img' src={postObj.image} alt='image' /> */}
 				</div>
 			</div>
 			{footer}

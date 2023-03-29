@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-body{
+.wrapper{
     background-color: #F3F3F3;
+}
+
+.wrapper[data-theme='dark']{
+    background-color: #313037;
 }
 
 .page-container{

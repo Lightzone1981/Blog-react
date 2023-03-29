@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import './Tabs.css'
 import Tab from './Tab'
+import { ThemeContext } from "../../contexts/themeContext";
+import { useState, useContext } from 'react';
 
 interface ITabsArr{
     id:number,
@@ -9,6 +10,8 @@ interface ITabsArr{
 }
 
 const Tabs = () => {
+    const { theme } = useContext(ThemeContext)
+    
     const tabsArr:ITabsArr[] = [
         { id:1, label: 'All'},
         { id:2, label: 'My favorites'},
@@ -17,7 +20,7 @@ const Tabs = () => {
     
     const [active, setTab] = useState('All');
     return (
-        <ul className='tabs'>
+        <ul className='tabs' data-theme={`${theme}`}>
             {tabsArr.map(el => <Tab key={el.id} label={el.label} active={active}
                 callback={() => setTab(el.label)} disabled={el.disabled} />)}
         </ul>

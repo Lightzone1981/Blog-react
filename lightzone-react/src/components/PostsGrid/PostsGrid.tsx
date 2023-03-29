@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import PostRow from "./PostRow";
 import { PaginationBar } from "../PaginationBar";
 import { Loader } from "../Loader";
@@ -13,10 +13,13 @@ const PostsGrid = () => {
 		height: window.innerHeight,
 		width: window.innerWidth,
 	});
+	
+	const [allPosts, setAllPosts] = useState([] as IPostInfo[])
+	const [paginationActiveItem, setPaginationActiveItem] = useState(1)
 
-	const postsPagesArray = getPagesPostsArray(mockDataPosts)
+	const postsPagesArray = useMemo(() => getPagesPostsArray(mockDataPosts), [mockDataPosts]) 
 
-	const handlePaginationClick = (e: any) => {
+	const handlePaginationClick = useCallback((e: any) => {
 		if (e.target.id.split('-')[0] === 'item') {
 			setPaginationActiveItem(Number(e.target.id.split('-')[1]))
 		}
@@ -29,10 +32,8 @@ const PostsGrid = () => {
 			if (paginationActiveItem < postsPagesArray.length)
 			setPaginationActiveItem(paginationActiveItem + 1)
 		}
-	}
+	},[])
 
-	const [allPosts, setAllPosts] = useState([] as IPostInfo[])
-	const [paginationActiveItem, setPaginationActiveItem] = useState(1)
 
 	useEffect(() => {
 		setTimeout(() => { setAllPosts(postsPagesArray[paginationActiveItem-1]) }, 3000)

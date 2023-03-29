@@ -5,6 +5,7 @@ import { callbackify } from 'util';
 interface IInput{
     type: string,
     name: string,
+    value?: string,
     label?: string,
     placeholder?: string,
     isEnable?: boolean,
@@ -15,7 +16,7 @@ interface IInput{
     callback: Function
 }
 
-const Input = ({ type, name, label, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
+const Input = ({ type, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
     const labelComponent = label? <label className='input__label' htmlFor={name}>{label}</label>:''
     return (
         <>
@@ -24,6 +25,7 @@ const Input = ({ type, name, label, placeholder, isEnable, isEmpty, isValid, isR
                 <input 
                     className='input'
                     name={name}
+                    value ={value}
                     type={type}
                     placeholder={placeholder}
                     data-empty={isEmpty}

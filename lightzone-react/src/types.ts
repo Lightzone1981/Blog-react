@@ -39,3 +39,8 @@ export interface IPagination {
     itemsCount: number,
     callback: Function,
 }
+
+export interface ITheme {
+    backgroundColor: string,
+    textColor:string
+}

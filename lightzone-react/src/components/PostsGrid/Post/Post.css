@@ -6,10 +6,23 @@
 	border-bottom: 1px solid #DADADA;
 }
 
-.post1__main {
+.post1__main{
+	/* background-color:#DADADA; */
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
+}
+
+.post1[data-theme='dark'],
+.post2[data-theme='dark'],
+.post3[data-theme='dark']{
+	border-color:#8D8E97;
+}
+
+.post1[data-theme='dark'] *,
+.post2[data-theme='dark'] *,
+.post3[data-theme='dark'] *{
+	color:#fff;
 }
 
 .post1__info-container {
@@ -46,6 +59,12 @@
 	color:#2231AA;
 }
 
+.post1[data-theme='dark'] .post1__title:hover,
+.post2[data-theme='dark'] .post2__title:hover,
+.post3[data-theme='dark'] .post3__title:hover{
+	color:#5360CD;
+}
+
 .post1__text {
 	font-size: 1rem;
 	line-height: 1.75em;
@@ -64,6 +83,10 @@
 	gap: 1.3rem;
 	padding: 2rem 0 2rem 0;
 }
+.post-footer[data-theme='dark'] .icon{
+	filter: brightness(5);
+}
+
 
 .icon {
 	width: 1.2rem;
@@ -88,7 +111,7 @@
 .likes-count {
 	align-self: flex-end;
 	font-size: 1rem;
-	font-weight: 700;
+	font-weight: 600;
 	margin-left: -0.9rem;
 }
 
@@ -115,7 +138,7 @@
 
 
 .post2__title {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 1.1rem;
 	margin: 0;
 	-webkit-line-clamp: 2; /* Число отображаемых строк */
@@ -140,7 +163,7 @@
 }
 
 .post3__title {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 1.1rem;
 	margin: 0;
 	-webkit-line-clamp: 3; /* Число отображаемых строк */
