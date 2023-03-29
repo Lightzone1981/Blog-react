@@ -1,8 +1,11 @@
 import './PaginationBar.css'
-import { mockDataPosts, ROW_VIEWS} from "../../constants/posts-constants";
-import { IPostInfo,IPagination } from '../../types';
+import { IPagination } from '../../types';
+import { ThemeContext } from "../../contexts/themeContext";
+import { useContext } from 'react';
 
 const PaginationBar = ({ activeItem, itemsCount, callback }: IPagination) => {
+    const { theme } = useContext(ThemeContext)
+    
     let itemsArr: string[] = []
 
     let tripletNum = activeItem % 3 ? Math.floor(activeItem/3) + 1 : Math.floor(activeItem/3)
@@ -30,7 +33,8 @@ const PaginationBar = ({ activeItem, itemsCount, callback }: IPagination) => {
     })
 
     return (
-        <section className="pagination">
+
+        <section className="pagination" data-theme={`${theme}`}>
             <div className="pagination__button" id='pagination-button-prev' data-active={activeItem === 1 ? 'false' : 'true'} onClick ={(e)=> callback(e)}>
                 <img className="pagination__button-arrow" src="./icons/arrow-icon.svg" alt="Arrow left" />
                 <span className="pagination__button-text">Prev</span>

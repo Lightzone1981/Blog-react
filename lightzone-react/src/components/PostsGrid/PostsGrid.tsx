@@ -19,7 +19,8 @@ const PostsGrid = () => {
 
 	const postsPagesArray = useMemo(() => getPagesPostsArray(mockDataPosts), [mockDataPosts]) 
 
-	const handlePaginationClick = useCallback((e: any) => {
+	const handlePaginationClick = (e: any) => {
+
 		if (e.target.id.split('-')[0] === 'item') {
 			setPaginationActiveItem(Number(e.target.id.split('-')[1]))
 		}
@@ -32,7 +33,7 @@ const PostsGrid = () => {
 			if (paginationActiveItem < postsPagesArray.length)
 			setPaginationActiveItem(paginationActiveItem + 1)
 		}
-	},[])
+	}
 
 
 	useEffect(() => {
