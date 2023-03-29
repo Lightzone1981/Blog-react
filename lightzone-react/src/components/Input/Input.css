@@ -37,6 +37,11 @@
     padding-top:0.4rem;
 }
 
+.input-container[data-theme='dark'] .input__error{
+    color:transparent;
+    padding-top:0.4rem;
+}
+
 .input[data-empty='false'][data-valid='false'] + .input__error {
     color:red;
 

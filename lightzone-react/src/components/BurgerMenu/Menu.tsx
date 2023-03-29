@@ -1,6 +1,7 @@
 import './BurgerMenu.css'
 import UserAvatar from '../UserAvatar/UserAvatar';
 import { ThemeContext } from "../../contexts/themeContext";
+
 import { useContext } from 'react';
 interface IItem {
     id:number,
@@ -10,7 +11,7 @@ interface IItem {
 
 
 const Menu = ({ visible, itemsArray }: { visible: boolean, itemsArray: IItem[] }) => {
-	const { setTheme } = useContext (ThemeContext)
+	const { theme, setTheme } = useContext (ThemeContext)
     
     return (
         <ul className="menu" data-visible={`${visible}`}>
@@ -29,11 +30,11 @@ const Menu = ({ visible, itemsArray }: { visible: boolean, itemsArray: IItem[] }
             <li key={'item-5'} className='menu__item menu__item--divider'>
             </li>
             <li key={'item-6'} className='menu__item mode-checker'>
-                <button className="mode-checker__button" onClick={()=>setTheme('light') }>
+                <button className="mode-checker__button" data-theme={`${theme}`} onClick={()=>setTheme('light') }>
                     <img className="mode-checker__button-icon" id='light-mode-button' src={"./icons/sun-icon.svg"} alt="light mode icon"
                          />
                 </button> 
-                <button className="mode-checker__button" onClick={()=>setTheme('dark') }>
+                <button className="mode-checker__button" data-theme={`${theme}`} onClick={()=>setTheme('dark') }>
                     <img className="mode-checker__button-icon" id='dark-mode-button' src={"./icons/moon-icon.svg"} alt="dark mode icon" />
                 </button>
             </li>

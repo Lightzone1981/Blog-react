@@ -72,6 +72,10 @@ gap:0.5rem
     color:#313037;
 }
 
+.page-container[data-theme='dark'] .post__button-text{
+    color:#313037;
+}
+
 @media (max-width: 768px){
     .post__title {
         font-size: 2rem;

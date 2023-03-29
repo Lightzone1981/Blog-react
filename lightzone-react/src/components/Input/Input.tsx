@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import './Input.css'
-import { callbackify } from 'util';
+import { ThemeContext } from "../../contexts/themeContext";
+import { useContext } from 'react';
 
 interface IInput{
     type: string,
@@ -17,10 +17,12 @@ interface IInput{
 }
 
 const Input = ({ type, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
-    const labelComponent = label? <label className='input__label' htmlFor={name}>{label}</label>:''
+    const { theme } = useContext(ThemeContext)
+    
+    const labelComponent = label ? <label className='input__label' htmlFor={name}>{label}</label> : ''
     return (
         <>
-            <div className="input-container" key={name}>
+            <div className="input-container" key={name} data-theme={`${theme}`}>
                 {labelComponent}
                 <input 
                     className='input'

@@ -123,7 +123,9 @@
     transition: 0.3s;
 }
 
-.mode-checker__button-icon:hover{
+.mode-checker__button:hover .mode-checker__button-icon,
+.mode-checker__button:first-child[data-theme='light'] .mode-checker__button-icon,
+.mode-checker__button:last-child[data-theme='dark'] .mode-checker__button-icon{
     opacity: 1;
 }
 

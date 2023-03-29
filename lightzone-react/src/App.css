@@ -14,6 +14,16 @@
     padding: 0 1rem;
 }
 
+.page-container[data-theme='dark'] p,
+.page-container[data-theme='dark'] h2,
+.page-container[data-theme='dark'] h1,
+.page-container[data-theme='dark'] span,
+.page-container[data-theme='dark'] li,
+.page-container[data-theme='dark'] a,
+.page-container[data-theme='dark'] label{
+    color: #fff;
+}
+
 .main{
     width: 100%;
     flex-grow: 1;
