@@ -1,0 +1,27 @@
+.posts-grid {
+	max-width: 1280px;
+	margin: 0 auto;
+	font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.posts-row {
+	width: 100%;
+	display: flex;
+	gap: 2rem;
+	padding-bottom: 2rem;
+	justify-content: space-between;
+}
+
+.post-row-main {
+	width: 64%;
+	display: flex;
+	gap:2rem;
+	justify-content: space-between;
+}
+
+.post-row-aside {
+	width: 33%;
+	gap: 2rem;
+	display: flex;
+	flex-direction: column;
+}

@@ -1,0 +1,9 @@
+.wrapper[data-selected='true']{
+    box-shadow: 0 0 10px #000;
+    border: 2px solid red;
+    width: fit-content;
+}
+
+.wrapper2{
+    cursor: pointer;
+}

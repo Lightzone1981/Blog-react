@@ -1,0 +1,33 @@
+.user-avatar{
+    display: inline-flex;
+    height: 5.25rem;
+    padding: 0 1.7rem;
+    gap:1rem;
+    align-items: center;
+    background-color: #2231AA;
+    color: #fff;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.user-avatar__short-name{
+    background-color: #5360CD;
+    border-radius: 2px;
+    padding: 0.7rem;
+}
+
+.user-avatar__button{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+@media (max-width:768px){
+    .user-avatar[data-location='header']{
+        display:none;
+    }
+}
