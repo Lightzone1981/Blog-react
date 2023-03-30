@@ -1,13 +1,32 @@
 .search-bar{
-    width: 10rem;
     height: 5.25rem;
     flex-grow: 1;
     display: flex;
+    background-color: #2231AA;
+}
+
+.search-bar__input-container{
+    flex-grow: 1;
+    background-color: #5360CD;
+    display:flex;
+}
+@media (max-width:500px){
+    .search-bar__input-container{
+        position: absolute;
+        top:100%;
+        left:0;
+        width: 100%;
+    }
+}
+
+.search-bar__input-container[data-visible='false']{
+    display:none;
 }
 
 .search-bar__input{
-    background-color: #5360CD;
+    min-width: 5rem;
     flex-grow: 1;
+    background-color: #5360CD;
     padding: 2rem;
     font-size: 1rem;
     outline: none;
@@ -19,63 +38,59 @@
     color:#fff;
     opacity: 0.5;
 }
-    .search-bar__input:focus::placeholder{
+
+.search-bar__input:focus::placeholder{
     color: #fff;
 }
 
-.search-bar__submit{
+.search-bar__hide-button{
+    position: relative;
     width: 5.25rem;
     height: 5.25rem;
     outline: none;
     border: none;
     background-color: transparent;
     cursor: pointer;
-   
-}
-.search-bar__submit:focus{
+    flex-shrink: 0;
     background-color: #5360CD;
 }
 
-.search-bar__submit-wrapper{
-    position: relative;
-    background-color: #2231AA;
-    border-right: 1px solid #5360CD;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.search-bar__submit-icon{
-    position: absolute;
-    top:33%;
-    left:35%;
-    width: 1.8rem;
-    height: 1.8rem;
-}
-
-.search-bar__button--erase{
-    flex-shrink: 2;
-    position: relative;
-    min-width: 4rem;
-    min-height: 4rem;
-    background-color: #5360CD;
-    border: none;
-    cursor: pointer;
-    outline: 0;
-    border: 0;
-}
-
-.search-bar__button--erase::before, .search-bar__button--erase::after{
+.search-bar__hide-button::before, .search-bar__hide-button::after{
     content:'';
     position: absolute;
     top:50%;
     left:33%;
-    width: 30%;
+    width: 25%;
     height: 2px;
     background-color: #fff;
     transform: rotate(45deg);
     transition: 0.3s;
 }
 
-.search-bar__button--erase::after{
+.search-bar__hide-button::after{
     transform: rotate(-45deg);
+}
+
+.search-bar__show-button{
+    position: relative;
+    width: 5.25rem;
+    height: 5.25rem;
+    margin-left:auto;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #2231AA;
+    border-right: 1px solid #5360CD;
+    border-left: 1px solid #5360CD;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar__show-button-icon{
+    position: absolute;
+    top:33%;
+    left:35%;
+    width: 1.8rem;
+    height: 1.8rem;
 }

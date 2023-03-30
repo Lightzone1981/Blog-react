@@ -1,24 +1,20 @@
 import './SearchBar.css'
-import ClearButton from './ClearButton'
 import { useState } from 'react';
 
 
 
 const SearchBar = () => {
     const [text, setText] = useState('')
-
+    const [searchInputVisible, setSearchInputVisible] = useState(false)
     return (
         <form className="search-bar">
-            <input className='search-bar__input' type='text' placeholder='Search...' value={text} onChange={(e)=> setText(e.target.value)}/>
-            <ClearButton buttonType='erase' callback={() => {setText('')}} />
-            <div className="search-bar__submit-wrapper">
-                <img className="search-bar__submit-icon" src={"./icons/search-icon.svg"} alt="search icon" />
-
-                <input className='search-bar__submit' type='submit' value='' onClick={(e) => {
-                    e.preventDefault();
-                    console.log(text);
-                }} />
+            <div className="search-bar__input-container" data-visible={`${searchInputVisible}`}>
+                <input className='search-bar__input' type='text' placeholder='Search...' value={text} onChange={(e)=> setText(e.target.value)}/>
+                <button className={`search-bar__hide-button`} onClick={()=>setSearchInputVisible(false)} />
             </div>
+            <button className="search-bar__show-button" onClick={() => { setSearchInputVisible(true); setText('')}}>
+                <img className="search-bar__show-button-icon" src={"./icons/search-icon.svg"} alt="search icon" />
+            </button>
         </form>
     )
 }

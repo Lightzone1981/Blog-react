@@ -26,3 +26,8 @@
     outline: none;
     cursor: pointer;
 }
+@media (max-width:768px){
+    .user-avatar[data-location='header']{
+        display:none;
+    }
+}

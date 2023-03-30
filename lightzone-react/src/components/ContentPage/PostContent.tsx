@@ -21,7 +21,6 @@ const PostContent = ({postObj}: IPost) => {
             <button className="post__footer-button">
 			    <img className="post__footer-icon post__footer-icon--rotate" src={"./icons/like-icon.svg"} alt="dislike icon" />
             </button>
-			<div className="post-footer-divider"></div>
             <button className="post__footer-button">
                 <img className="post__footer-icon" src={"./icons/bookmark-icon.svg"} alt="bookmark icon" />
                 <p className="post__button-text">Add to favorites</p>

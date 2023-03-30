@@ -27,15 +27,26 @@
 
 .form-text-link--black{
     color:#313037;
-    padding-bottom: 3rem;
 }
 
 .form-text-link:hover, .form-text-link:focus{
     color:#5360CD;
 }
 
+.page-container[data-theme='dark'] .form-text-link{
+    color:#8D8E97;
+}
+
+.page-container[data-theme='dark'] .form-text-link:hover{
+    color:#5360CD;
+}
+
 @media (max-width: 768px) {
     .registration{
     max-width: 100%;
+    }
+
+    .sign-in-form{
+        padding: 1.5rem;
     }
 }

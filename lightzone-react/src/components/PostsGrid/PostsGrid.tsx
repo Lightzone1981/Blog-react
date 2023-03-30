@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import PostRow from "./PostRow";
-import { PaginationBar } from "../PaginationBar";
+import { PostsGridPagination } from "../PostsGridPagination";
 import { Loader } from "../Loader";
 import { IPostInfo } from '../../types';
 import getRowsArray from '../../utils/getRowsArray';
@@ -76,7 +76,7 @@ const PostsGrid = () => {
 	return (
 		<>
 		<section className="posts-grid">{posts.map((el: IPostInfo[], index: number) => PostRow(el, index, windowSize))}</section>
-		<PaginationBar activeItem={paginationActiveItem} itemsCount={postsPagesArray.length} callback={(e:any)=>handlePaginationClick(e)} />
+		<PostsGridPagination activeItem={paginationActiveItem} itemsCount={postsPagesArray.length} callback={(e:any)=>handlePaginationClick(e)} />
 		</>
 	);
 };

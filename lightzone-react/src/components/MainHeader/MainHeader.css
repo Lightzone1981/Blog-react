@@ -1,8 +1,7 @@
 .main-header{
+    position: relative;
     width: 100%;
-    min-width: 45rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed; */
 }

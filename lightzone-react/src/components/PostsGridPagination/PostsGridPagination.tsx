@@ -1,9 +1,9 @@
-import './PaginationBar.css'
+import './PostsGridPagination.css'
 import { IPagination } from '../../types';
 import { ThemeContext } from "../../contexts/themeContext";
 import { useContext } from 'react';
 
-const PaginationBar = ({ activeItem, itemsCount, callback }: IPagination) => {
+const PostsGridPagination = ({ activeItem, itemsCount, callback }: IPagination) => {
     const { theme } = useContext(ThemeContext)
     
     let itemsArr: string[] = []
@@ -50,4 +50,4 @@ const PaginationBar = ({ activeItem, itemsCount, callback }: IPagination) => {
     )
 }
 
-export default PaginationBar
+export default PostsGridPagination

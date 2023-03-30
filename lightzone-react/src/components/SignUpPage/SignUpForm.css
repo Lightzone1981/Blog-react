@@ -33,4 +33,7 @@
     .registration{
     max-width: 100%;
     }
+    .sign-up-form{
+        padding: 1.5rem;
+    }
 }

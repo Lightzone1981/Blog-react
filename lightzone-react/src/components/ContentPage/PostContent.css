@@ -17,75 +17,92 @@
 .post__title {
 	font-size: 3.5rem;
 	font-weight: 700;
-    line-height: 5rem;
-    padding-bottom: 3rem;
+	line-height: 5rem;
+	padding-bottom: 3rem;
 }
 
 .post__image {
-    width: 90%;
-    height: 45vw;
-    margin: 0 auto;
+	width: 90%;
+	height: 45vw;
+	margin: 0 auto;
 }
 
 .post__text {
-    width: 80%;
+	width: 80%;
 	font-size: 1.15rem;
 	font-weight: 400;
-    line-height: 2rem;
-    color:#313037;
-    padding-top: 3rem;
-    margin: 0 auto;
+	line-height: 2rem;
+	color: #313037;
+	padding-top: 3rem;
+	margin: 0 auto;
 }
 
-.post__footer{
-width: 100%;
-height: 3.5rem;
-display: flex;
-gap:0.5rem
+.post__footer {
+	width: 100%;
+	display: flex;
+	gap: 0.5rem;
+	padding: 0 10% 4.5rem 10%;
+	border-bottom: solid 1px #dadada;
 }
 
-.post__footer-button{
-    padding:1rem 2rem;
-    background-color: #E8E8E8;
-    border-radius: 0;
-    border:none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    cursor: pointer;
-    transition: 0.3s;
+.post__footer-button {
+	padding: 2rem;
+	background-color: #e8e8e8;
+	border-radius: 0;
+	border: none;
+	outline: none;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	gap: 0.9rem;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
-.post__footer-button:hover{
-    padding:1rem 2rem;
-    background-color: #d3d3d3;
+.post__footer-button:nth-child(3){
+    margin-left: auto;
+}
+.post__footer-button:hover {
+	background-color: #d3d3d3;
 }
 
-.post__footer-icon--rotate{
-    transform: rotate(180deg);
+.post__footer-icon--rotate {
+	transform: rotate(180deg);
 }
 
-.post__button-text{
-    font-weight: 700;
-    font-size: 1.15rem;
-    color:#313037;
+.post__button-text {
+	font-weight: 700;
+	font-size: 1.15rem;
+	color: #313037;
 }
 
-.page-container[data-theme='dark'] .post__button-text{
-    color:#313037;
+.page-container[data-theme="dark"] .post__button-text {
+	color: #313037;
 }
 
-@media (max-width: 768px){
-    .post__title {
-        font-size: 2rem;
-        line-height: 3rem;
+@media (max-width: 768px) {
+	.post__title {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+	.post__text {
+		width: 100%;
+	}
+	.post__image {
+		width: 100%;
+		height: 50vw;
+	}
+	.post__footer {
+		padding: 0 0 4.5rem 0;
+        gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+    .post__footer-button:nth-child(1),
+    .post__footer-button:nth-child(2){
+        flex-grow: 1;
     }
-    .post__text {
+    .post__footer-button:nth-child(3){
         width: 100%;
-    }
-    .post__image {
-        width: 100%;
-        height: 50vw;
     }
 }

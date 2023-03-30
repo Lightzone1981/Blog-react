@@ -16,7 +16,7 @@ const Menu = ({ visible, itemsArray }: { visible: boolean, itemsArray: IItem[] }
     return (
         <ul className="menu" data-visible={`${visible}`}>
             <li key={'item-1'} className='menu__item'>
-                <UserAvatar username='Evgeniy_Lebedevski'/>
+                <UserAvatar username='Evgeniy_Lebedevski' location='menu'/>
             </li>
             <li key={'item-2'} className='menu__item'>
                 <a className='menu__link' href='#'>Home</a>
