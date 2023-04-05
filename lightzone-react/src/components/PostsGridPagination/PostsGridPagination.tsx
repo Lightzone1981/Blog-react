@@ -2,6 +2,7 @@ import './PostsGridPagination.css'
 import { IPagination } from '../../types';
 import { ThemeContext } from "../../contexts/themeContext";
 import { useContext } from 'react';
+import ArrowIcon from '../Icons/ArrowIcon';
 
 const PostsGridPagination = ({ activeItem, itemsCount, callback }: IPagination) => {
     const { theme } = useContext(ThemeContext)
@@ -36,7 +37,10 @@ const PostsGridPagination = ({ activeItem, itemsCount, callback }: IPagination) 
 
         <section className="pagination" data-theme={`${theme}`}>
             <div className="pagination__button" id='pagination-button-prev' data-active={activeItem === 1 ? 'false' : 'true'} onClick ={(e)=> callback(e)}>
-                <img className="pagination__button-arrow" src="./icons/arrow-icon.svg" alt="Arrow left" />
+                {theme === 'light' ?
+                    <ArrowIcon width='18' height='15' color='#000' />
+                    : <ArrowIcon width='18' height='15' color='#FFF' />
+                }
                 <span className="pagination__button-text">Prev</span>
             </div>
             <ul className="pagination__list">
@@ -44,7 +48,10 @@ const PostsGridPagination = ({ activeItem, itemsCount, callback }: IPagination) 
             </ul>
             <div className="pagination__button" id='pagination-button-next' data-active={activeItem === itemsCount ? 'false' : 'true'} onClick ={(e)=> callback(e)}>
                 <span className="pagination__button-text">Next</span>
-                <img className="pagination__button-arrow" src="./icons/arrow-icon.svg" alt="Arrow left" />
+                {theme === 'light' ?
+                    <ArrowIcon width='18' height='15' color='#000' />
+                    : <ArrowIcon width='18' height='15' color='#FFF' />
+                }
             </div>
         </section>
     )

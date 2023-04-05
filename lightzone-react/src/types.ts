@@ -34,6 +34,17 @@ export interface IMessage{
     message:string
 }
 
+export interface IUserAvatar{
+    username: string,
+    location: string
+}
+
+export interface IUserData{
+    username: string,
+    email: string,
+    password: string,
+}
+
 export interface IPagination {
     activeItem: number,
     itemsCount: number,
@@ -41,6 +52,18 @@ export interface IPagination {
 }
 
 export interface ITheme {
-    backgroundColor: string,
-    textColor:string
+    BACKGROUND_COLOR: string,
+    TEXT_COLOR: string
 }
+
+export interface IIcon {
+    width: string,
+    height: string,
+    color: string,
+    hoverColor?: string,
+}
+
+export interface IAuthorize{
+    status: boolean,
+    username:string
+  }

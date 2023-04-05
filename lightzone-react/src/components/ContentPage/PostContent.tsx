@@ -1,12 +1,29 @@
-import { IPost } from "../../types";
+import { IPostInfo } from "../../types";
+import LikeIcon from "../Icons/LikeIcon";
+import DislikeIcon from "../Icons/DislikeIcon";
+import BookmarkIcon from "../Icons/BookmarkIcon";
+import { Link } from "react-router-dom";
 import './PostContent.css'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import { mockDataPosts} from "../../constants/posts-constants";
 
+const PostContent = () => {
+    const [postObj, setPostObj] = useState({} as IPostInfo)
+    const { postId } = useParams()
 
-const PostContent = ({postObj}: IPost) => {
+    useEffect(() => {
+        setPostObj(mockDataPosts.find(el => String(el.id) === postId) || {} as IPostInfo)
+        },[]
+    )
+
+    
     return (
         <>
         <header className="post__header">
-            <a href="#" className="back-home-link">Home</a>
+            <Link to={`/posts/`} style={{ textDecoration: 'none', color: '#313037' }}>
+                <a href="#" className="back-home-link">Home</a>
+			</Link>
             <p className="post__id">{`|  Post ${postObj.id}`}</p>
         </header>
         <div className="post__container">
@@ -16,13 +33,13 @@ const PostContent = ({postObj}: IPost) => {
         </div>
         <footer className="post__footer">
             <button className="post__footer-button">
-                <img className="post__footer-icon" src={"./icons/like-icon.svg"} alt="like icon" />
+                <LikeIcon width='22' height='22' color='#4C4B5E'/>
             </button>
             <button className="post__footer-button">
-			    <img className="post__footer-icon post__footer-icon--rotate" src={"./icons/like-icon.svg"} alt="dislike icon" />
+                <DislikeIcon width='22' height='22' color='#4C4B5E'/>
             </button>
             <button className="post__footer-button">
-                <img className="post__footer-icon" src={"./icons/bookmark-icon.svg"} alt="bookmark icon" />
+                <BookmarkIcon width='16' height='22' color='#4C4B5E'/>
                 <p className="post__button-text">Add to favorites</p>
             </button>
 			

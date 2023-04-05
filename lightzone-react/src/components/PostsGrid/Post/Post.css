@@ -100,14 +100,6 @@
 	filter: brightness(0.5);
 }
 
-.icon:nth-child(3) {
-	transform: rotate(180deg);
-}
-
-.icon:nth-child(3):hover {
-	transform: rotate(180deg) scale(1.1);
-}
-
 .likes-count {
 	align-self: flex-end;
 	font-size: 1rem;

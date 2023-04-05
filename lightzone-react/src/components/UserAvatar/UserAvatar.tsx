@@ -1,22 +1,24 @@
 import './UserAvatar.css'
+import UserIcon from '../Icons/UserIcon'
+import { IUserAvatar } from '../../types'
+import { AuthorizeContext } from '../../contexts/authorizeContext'
+import { useContext } from 'react';
 
-interface IProps{
-    username: string,
-    location: string
-}
 
-const UserAvatar = ({ username, location }: IProps) => {
+const UserAvatar = ({ location }: IUserAvatar) => {
+const {authorize} = useContext (AuthorizeContext)
+
     return (
         <div className="user-avatar" data-location={`${location}`}>
-            {username === "" ? 
+            {authorize.username === "" || !authorize.status ? 
                 <button className="user-avatar__button">
-                    <img className="user-avatar__button-icon" src={"./icons/user-icon.svg"} alt="user icon" />
+                    <UserIcon width='24' height='24' color='#fff'/>
                 </button>
                 : <>
                     <div className="user-avatar__short-name">
-                        {username.split('_').reduce((res,el)=>res+el[0].toUpperCase(),'')}
+                        {authorize.username.split('_').reduce((res,el)=>res+el[0].toUpperCase(),'')}
                    </div>
-                    {username.replaceAll('_', ' ')}
+                    {authorize.username.replaceAll('_', ' ')}
                 </>
             }
         </div>

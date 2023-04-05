@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 .sign-in-form{
-    list-style-type: none;
     font-family: Inter;
+    margin:0 auto;
     flex-grow: 1;
     width: 100%;
     max-width: 39rem;
@@ -12,6 +12,10 @@
     border: 1px solid #DADADA;
     padding: 2rem 3rem;
 }
+.button-submit{
+    width: 100%;
+}
+
 .sign-up-form-text{
     font-size: 1rem;
     text-align: center;

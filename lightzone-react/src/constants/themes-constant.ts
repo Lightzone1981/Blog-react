@@ -1,11 +1,11 @@
 import { ITheme } from "../types";
 
-export const lightTheme: ITheme = {
-    backgroundColor: '#F3F3F3',
-    textColor:'#313037',
+export const LIGHT_THEME: ITheme = {
+    BACKGROUND_COLOR: '#F3F3F3',
+    TEXT_COLOR:'#313037',
 }
 
-export const darkTheme: ITheme = {
-    backgroundColor: '#313037',
-    textColor:'#FFF',
+export const DARK_THEME: ITheme = {
+    BACKGROUND_COLOR: '#313037',
+    TEXT_COLOR:'#FFF',
 }

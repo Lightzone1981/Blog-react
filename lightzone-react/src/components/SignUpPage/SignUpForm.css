@@ -4,6 +4,7 @@
     list-style-type: none;
     font-family: Inter;
     flex-grow: 1;
+    margin:0 auto;
     width: 100%;
     max-width: 39rem;
     display: flex;
@@ -12,6 +13,11 @@
     border: 1px solid #DADADA;
     padding: 2rem 3rem;
 }
+
+.button-submit{
+    width: 100%;
+}
+
 .sign-up-form-text{
     font-size: 1rem;
     text-align: center;

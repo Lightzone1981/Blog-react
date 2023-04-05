@@ -8,7 +8,7 @@ const BurgerMenu = () => {
     return (
         <div className="burger-menu">
             <Burger active={active} callback={()=>setActive(!active)}/>
-            <Menu visible={active} itemsArray={[]} />
+            <Menu visible={active}/>
         </div>
      )    
 }

@@ -37,7 +37,7 @@ const PostsGrid = () => {
 
 
 	useEffect(() => {
-		setTimeout(() => { setAllPosts(postsPagesArray[paginationActiveItem-1]) }, 3000)
+		setTimeout(() => { setAllPosts(postsPagesArray[paginationActiveItem-1]) }, 1000)
 	}, [])
 
 	useEffect(() => {

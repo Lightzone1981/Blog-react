@@ -8,12 +8,10 @@ const ContentPage = () => {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <div className="page-container" data-theme={`${theme}`}>
-            <main className="main">
-                <PostContent postObj={mockDataPosts[0]} /> 
-                <PostPagination activeItem={1} itemsCount={10} callback={()=>{}}/>
-            </main>
-        </div>
+        <main className="main">
+            <PostContent/> 
+            <PostPagination activeItem={1} itemsCount={mockDataPosts.length} callback={()=>{}}/>
+        </main>
     )
 }
 

@@ -13,7 +13,7 @@ interface IInput{
     isValid:boolean,
     isRequired?: boolean,
     error?: string,
-    callback: Function
+    callback: Function,
 }
 
 const Input = ({ type, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
