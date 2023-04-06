@@ -7,15 +7,13 @@ const MainPage = () => {
     const { theme } = useContext(ThemeContext)
     return (
         <>
-        <div className="page-container" data-theme={`${theme}`}>
-            <main className="main">
-                <div className="title-wrapper">
-                    <h1 className="page-title">Blog</h1>
-                </div>
-                <Tabs/>
-                <PostsGrid />
-            </main>
-        </div>
+        <main className="main">
+            <div className="title-wrapper">
+                <h1 className="page-title">Blog</h1>
+            </div>
+            <Tabs/>
+            <PostsGrid />
+        </main>
         </>
     )
 }

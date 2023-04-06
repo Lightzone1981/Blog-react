@@ -29,6 +29,7 @@ const ColorsTest = () => {
         <>
         <Input
             type='number'
+            id='input-x'
             name='input-1'
             label=''
             placeholder='Enter X coordinate'

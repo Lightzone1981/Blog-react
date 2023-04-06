@@ -30,8 +30,8 @@ const App = () => {
                   <Route path='sign-in' element={<SignInPage/>} />
                   <Route path='sign-up' element={<SignUpPage/>} />
                   <Route path='add-post' element={<AddPostPage/>} />
-                  <Route path='confirmation' element={<RegistrationConfirmationPage message='Please activate your account with the activation link in the email: lightzone@tut.by. Please, check your email' />} />
-                  <Route path='registration-success' element={<SuccessPage message='Email confirmed. Your registration is now completed'/>}/>
+                  <Route path='confirmation' element={<RegistrationConfirmationPage/>} />
+                  <Route path='registration-success' element={<SuccessPage/>}/>
 
                 </Route>
               </Routes>

@@ -9,12 +9,14 @@ const AddPostForm = () => {
     const [lessonText, setLessonText] = useState('')
     const [descriptionText, setDescriptionText] = useState('')
     const [postText, setPostText] = useState('')
+    const [fileName, setFileNameArr] = useState('')
     
     return (
         <form className="add-post-form">
         
         <Input
             type='text'
+            id='input-title'
             name='input-1'
             label='Title'
             placeholder='Post Title'
@@ -28,6 +30,7 @@ const AddPostForm = () => {
 
         <Input
             type='number'
+            id='input-lesson'
             name='add-post-input-2'
             label='Lesson number'
             placeholder=''
@@ -42,18 +45,15 @@ const AddPostForm = () => {
                     } else setLessonText('0')
                 }}
         />
-            
-        <Input
-            type='file'
-            name='add-post-input-3'
-            label='Image'
-            placeholder=''
-            isRequired={false}
-            isEnable={true}
-            isEmpty={lessonText === '' ? true : false}
-            isValid={true}
-            callback={(e: any) => {}}
-        />
+        <div className="input-file-wrapper">
+            <p className="input-file-text">Image</p>
+            <span className="input-text" >{fileName}</span> 
+                <input type="file" className="input" id="input-file" onChange={(e) => {
+                    e.target.files? setFileNameArr(e.target.files[0].name): setFileNameArr('')
+            }}/> 
+            <label htmlFor="input-file" className="input-file__label" >Upload new</label>
+                
+        </div>  
             
         <TextArea
             className='textarea'

@@ -18,6 +18,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         <form className="sign-up-form">
         <Input
             type='text'
+            id='input-name'
             name='input-1'
             label='Name'
             placeholder='Your name'
@@ -31,6 +32,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         
         <Input
             type='email'
+            id='input-email'
             name='input-2'
             label='Email'
             placeholder='Your email'
@@ -44,6 +46,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
 
         <Input
             type='password'
+            id='input-password'
             name='input-3'
             label='Password'
             placeholder='Your password'
@@ -57,6 +60,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         
         <Input
             type='password'
+            id='input-password-confirm'
             name='input-3'
             label='Confirm Password'
             placeholder='Confirm password'

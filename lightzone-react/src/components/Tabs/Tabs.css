@@ -45,3 +45,20 @@
     color: #8D8E97;
     cursor: default;
 }
+
+@media(max-width:768px){
+    .tabs{
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+    .tabs__item{
+        position:relative;
+        text-align: left;
+        padding: 0.5rem 0;
+        border-bottom: none;
+    }
+    .tabs__item--active{
+    color: #2231AA;
+    }
+
+}

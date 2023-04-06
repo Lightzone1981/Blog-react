@@ -26,6 +26,7 @@ const SignInForm = () => {
         
         <Input
             type='email'
+            id='input-email'
             name='input-2'
             label='Email'
             placeholder='Your email'
@@ -39,6 +40,7 @@ const SignInForm = () => {
 
         <Input
             type='password'
+            id='input-password'
             name='input-3'
             label='Password'
             placeholder='Your password'

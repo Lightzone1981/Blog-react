@@ -105,10 +105,11 @@ height: calc(100vh - 5.25rem - 1px);
 
 @media (max-width:768px){
     .title-wrapper{
-       padding: 2rem 0;
+       padding: 0;
     }
     .page-title{
         font-size: 2rem;
+        padding: 0;
     }
     .main{
         gap:2rem;
