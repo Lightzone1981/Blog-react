@@ -1,8 +1,14 @@
 import { IPost } from "../../../types";
+import LikeIcon from "../../Icons/LikeIcon";
+import DislikeIcon from "../../Icons/DislikeIcon";
+import BookmarkIcon from "../../Icons/BookmarkIcon";
+import MoreIcon from "../../Icons/MoreIcon";
 import "./Post.css";
 import { POST_VIEWS } from "../../../constants/posts-constants";
 import { ThemeContext } from "../../../contexts/themeContext";
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 
 const dateFormat = (date: string): string => {
 	const dateArr = date.split("-");
@@ -56,16 +62,12 @@ const Post = ({ postObj, postView }: IPost) => {
 
 	const footer = (
 		<footer className="post-footer" data-theme={`${theme}`}>
-			<img className="icon" src={"./icons/like-icon.svg"} alt="like icon" />
+			<LikeIcon width='22' height='22' color='#4C4B5E'/>
 			<span className="likes-count">20</span>
-			<img className="icon" src={"./icons/like-icon.svg"} alt="like icon" />
+			<DislikeIcon width='22' height='22' color='#4C4B5E'/>
 			<div className="post-footer-divider"></div>
-			<img
-				className="icon"
-				src={"./icons/bookmark-icon.svg"}
-				alt="bookmark icon"
-			/>
-			<img className="icon" src={"./icons/more-icon.svg"} alt="see more icon" />
+			<BookmarkIcon width='16' height='22' color='#4C4B5E'/>
+			<MoreIcon width='20' height='4' color='#4C4B5E'/>
 		</footer>
 	);
 
@@ -74,7 +76,9 @@ const Post = ({ postObj, postView }: IPost) => {
 			<div className="post1__main" >
 				<div className="post1__info-container">
 					{date}
-					<h2 className="post1__title">{postObj.title}</h2>
+					<Link to={`/posts/${postObj.id}`} style={{ textDecoration: 'none', color: '#313037' }}>
+						<h2 className="post1__title">{postObj.title}</h2>
+					</Link>
 					<p className="post1__text">{postObj.text}</p>
 				</div>
 				<div
@@ -93,7 +97,9 @@ const Post = ({ postObj, postView }: IPost) => {
 				style={{ background: `url(${postObj.image}) center/cover` }}>
 			</div>
 			{date}
-			<h2 className="post2__title">{postObj.title}</h2>
+			<Link to={`/posts/${postObj.id}`} style={{ textDecoration: 'none', color: '#313037' }}>
+				<h2 className="post2__title">{postObj.title}</h2>
+			</Link>
 			{footer}
 		</div>
 	);
@@ -103,7 +109,9 @@ const Post = ({ postObj, postView }: IPost) => {
 			<div className="post3__main">
 				<div className="post3__info-container">
 					{date}
-					<h2 className="post3__title">{postObj.title}</h2>
+					<Link to={`/posts/${postObj.id}`} style={{ textDecoration: 'none', color: '#313037' }}>
+						<h2 className="post3__title">{postObj.title}</h2>
+					</Link>
 				</div>
 				<div
 					className="post3__image-container"

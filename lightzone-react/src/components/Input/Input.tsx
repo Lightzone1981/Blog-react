@@ -4,6 +4,7 @@ import { useContext } from 'react';
 
 interface IInput{
     type: string,
+    id:string,
     name: string,
     value?: string,
     label?: string,
@@ -13,10 +14,10 @@ interface IInput{
     isValid:boolean,
     isRequired?: boolean,
     error?: string,
-    callback: Function
+    callback: Function,
 }
 
-const Input = ({ type, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
+const Input = ({ type, id, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
     const { theme } = useContext(ThemeContext)
     
     const labelComponent = label ? <label className='input__label' htmlFor={name}>{label}</label> : ''
@@ -26,6 +27,7 @@ const Input = ({ type, name, label, value, placeholder, isEnable, isEmpty, isVal
                 {labelComponent}
                 <input 
                     className='input'
+                    id={id}
                     name={name}
                     value ={value}
                     type={type}

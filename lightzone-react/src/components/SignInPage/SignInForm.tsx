@@ -1,20 +1,32 @@
 import Button from "../Buttons/Button"
 import { Input } from "../Input"
-import { useState, useEffect } from 'react';
+import { useState, useContext} from 'react';
 import './SignInForm.css'
+import { usersDataArray } from "../../constants/users-constants";
+import { Link } from "react-router-dom";
+import { AuthorizeContext } from "../../contexts/authorizeContext";
+import { IUserData } from '../../types';
 
-    
 const SignInForm = () => {
-const [nameText, setNameText] = useState('')
-const [emailText, setEmailText] = useState('')
-const [passwordText, setPasswordText] = useState('')
-const [passwordConfirmText, setPasswordConfirmText] = useState('')
+    const [emailText, setEmailText] = useState('')
+    const [passwordText, setPasswordText] = useState('')
+    const { authorize, setAuthorize } = useContext (AuthorizeContext)
+
+    const signIn = (email: string, password: string) => {
+        usersDataArray.forEach((user: IUserData) => {
+            if (user.email === email && user.password === password) {
+                setAuthorize({ status: true, username: `${user.username}` })
+            }
+        })
+    }
+    
     
     return (
         <form className="sign-in-form">
         
         <Input
             type='email'
+            id='input-email'
             name='input-2'
             label='Email'
             placeholder='Your email'
@@ -28,6 +40,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
 
         <Input
             type='password'
+            id='input-password'
             name='input-3'
             label='Password'
             placeholder='Your password'
@@ -38,20 +51,25 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
             isValid={passwordText.length < 8 && passwordText !== ''? false : true}
             callback={(e: any) => setPasswordText(e.target.value)}
         />
-            <a className="form-text-link form-text-link--black" href='#'>
-                Forgot password?
-            </a>
-        <Button
-            className='button button-submit'
-            content='Sign In'
-            isActive={true}
-            callback={(e: any) => { e.preventDefault() }}
-        />
-            <p className="sign-in-form-text">Don’t have an account? 
-                <a className="form-text-link" href='#'>
-                    Sign Up
-                </a>
-            </p>
+        <a className="form-text-link form-text-link--black" href='#'>
+            Forgot password?
+        </a>
+        <Link to={authorize.status?'/posts':'#'} style={{textDecoration:'none'}}>
+            <Button
+                className='button button-submit'
+                content='Sign In'
+                isActive={true}
+                callback={() => {
+                    signIn(emailText,passwordText)
+                }}
+            />
+        </Link>
+
+        <p className="sign-in-form-text">Don’t have an account? 
+            <Link to={'/sign-up'} style={{textDecoration:'none'}}>
+                <span className="form-text-link">Sign Up</span>
+            </Link>
+        </p>
             
         </form>
         

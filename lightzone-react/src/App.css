@@ -1,15 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+*{
+user-select:none;
+outline:0;
+}
+
 .wrapper{
     background-color: #F3F3F3;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .wrapper[data-theme='dark']{
     background-color: #313037;
 }
 
+.wrapper:has(.main--homepage) {
+    background-color: #2231AA;
+    overflow: hidden;
+}
+
+.wrapper:has(.main--homepage){
+height: calc(100vh - 5.25rem - 1px);
+}
+
+.wrapper:has(.main--homepage) .main-footer{
+    display:none;
+}
+
 .page-container{
+    width: 100%;
     max-width: 1170px;
+    flex-grow:1;
+    display:flex;
+    flex-direction: column;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -31,22 +56,30 @@
     display: flex;
     flex-direction: column;
     gap:4em;
-    align-items: center;
-    justify-content: center;
+}
+.main--homepage{
+    gap:2rem;
 }
 
 .title-wrapper{
     width: 100%;
 }
 
-.back-home-link{
+.back-home-link, .link{
     font-family: inter;
     text-decoration: none;
     color:#313037;
     transition: 0.3s;
 }
 
-.back-home-link:hover{
+.link{
+    color: #949ce7;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.back-home-link:hover, .link:hover{
     color:#5360CD;
 }
 
@@ -66,12 +99,17 @@
     color: #313037;
 }
 
+.page-container[data-theme='dark'] .page-titler{
+    color:#FFF;
+}
+
 @media (max-width:768px){
     .title-wrapper{
-       padding: 2rem 0;
+       padding: 0;
     }
     .page-title{
         font-size: 2rem;
+        padding: 0;
     }
     .main{
         gap:2rem;

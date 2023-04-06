@@ -1,8 +1,13 @@
+.input-container{
+    width: 100%;
+}
+
 .input{
     width: 100%;
     padding: 1rem;
     font-size: 1.2rem;
     border: 1px solid #fff;
+    border-radius: 2px;
     outline: 0;
 }
 
@@ -30,6 +35,11 @@
     padding: 0.3rem 0;
     font-size: 1rem;
     font-weight: 600;
+}
+
+.input-container[data-theme='dark'] .input__label,
+.input-container[data-theme='dark'] .textarea__label{
+    color:#FFF;
 }
 
 .input__error{

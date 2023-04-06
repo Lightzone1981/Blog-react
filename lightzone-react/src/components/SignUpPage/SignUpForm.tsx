@@ -2,6 +2,7 @@ import Button from "../Buttons/Button"
 import { Input } from "../Input"
 import { useState, useEffect } from 'react';
 import './SignUpForm.css'
+import { Link } from 'react-router-dom';
 
     
 const SignUpForm = () => {
@@ -17,6 +18,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         <form className="sign-up-form">
         <Input
             type='text'
+            id='input-name'
             name='input-1'
             label='Name'
             placeholder='Your name'
@@ -30,6 +32,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         
         <Input
             type='email'
+            id='input-email'
             name='input-2'
             label='Email'
             placeholder='Your email'
@@ -43,6 +46,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
 
         <Input
             type='password'
+            id='input-password'
             name='input-3'
             label='Password'
             placeholder='Your password'
@@ -56,6 +60,7 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
         
         <Input
             type='password'
+            id='input-password-confirm'
             name='input-3'
             label='Confirm Password'
             placeholder='Confirm password'
@@ -74,9 +79,9 @@ const [passwordConfirmText, setPasswordConfirmText] = useState('')
             callback={(e: any) => { e.preventDefault() }}
         />
             <p className="sign-up-form-text">Already have an account?
-                <a className="form-text-link" href='#'>
-                    Sign In
-                </a>
+                <Link to={'/sign-in'} style={{textDecoration:'none'}}>
+                    <span className="form-text-link" >Sign In</span>
+                </Link>
             </p>
             
         </form>

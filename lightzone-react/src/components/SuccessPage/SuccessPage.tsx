@@ -3,7 +3,7 @@ import { IMessage } from '../../types';
 import { ThemeContext } from "../../contexts/themeContext";
 import { useContext } from 'react';
 
-const SuccessPage = ({ message }: IMessage) => {
+const SuccessPage = () => {
     
     const { theme } = useContext(ThemeContext)
     
@@ -14,7 +14,7 @@ const SuccessPage = ({ message }: IMessage) => {
                     <a href="#" className="back-home-link">Back to home</a>
                     <h1 className="page-title">Success</h1>
                 </div>
-                <InfoForm message={message} />
+                <InfoForm message={'Email confirmed. Your registration is now completed'} />
             </main>
         </div>
     )
