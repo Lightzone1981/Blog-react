@@ -1,6 +1,6 @@
 import Button from "../Buttons/Button"
 import { Input, TextArea } from '../../components';
-import { useState, useContext} from 'react';
+import { useState} from 'react';
 import './AddPostPage.css'
 import { Link } from "react-router-dom";
 
@@ -101,15 +101,8 @@ const AddPostForm = () => {
             </Link>
                 
         </footer>
-            
-            
-
-       
-            
         </form>
-        
     )
-
 }
 
 export default AddPostForm

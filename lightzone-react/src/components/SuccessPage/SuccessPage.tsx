@@ -1,11 +1,10 @@
 import InfoForm from '../InfoForm/InfoForm';
-import { IMessage } from '../../types';
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
+import { IStoreState } from '../../types';
+import { useSelector } from 'react-redux';
 
 const SuccessPage = () => {
     
-    const { theme } = useContext(ThemeContext)
+	const theme = useSelector((state: IStoreState) => state.ui.theme);
     
     return (
         <div className="page-container" data-theme={`${theme}`}>

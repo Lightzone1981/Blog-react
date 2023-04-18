@@ -9,9 +9,9 @@ const AddPostPage = () => {
     return(
     <main className="main">
         <div className="title-wrapper">
-        <Link to={'/posts'} style={{textDecoration:'none'}}>
-            <a href="#" className="back-home-link">Home</a>
-                </Link>
+            <Link to={'/posts'} className="back-home-link" style={{textDecoration:'none'}}>
+                Home
+            </Link>
             <span className="breadcrumbs-item">{'| Add Post'}</span>
             <h1 className="page-title">Add Post</h1>
         </div>

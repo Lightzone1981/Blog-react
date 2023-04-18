@@ -1,14 +1,18 @@
-import { useState } from "react"
 import Burger from './Burger'
 import Menu from './Menu'
+import { useDispatch, useSelector } from 'react-redux';
+import { IStoreState } from "../../types";
+import { setBurgerStatus } from "../../redux/action-creators";
+
 
 const BurgerMenu = () => {
-    const [active, setActive] = useState(false)
+    const dispatch = useDispatch()
+    
 
     return (
         <div className="burger-menu">
-            <Burger active={active} callback={()=>setActive(!active)}/>
-            <Menu visible={active}/>
+            <Burger />
+            <Menu />
         </div>
      )    
 }

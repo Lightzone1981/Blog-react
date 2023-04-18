@@ -1,10 +1,10 @@
 import InfoForm from '../InfoForm/InfoForm';
-import { IMessage } from '../../types';
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
+import { IMessage, IStoreState } from '../../types';
+import { useSelector } from 'react-redux';
+
 
 const RegistrationPage = () => {
-    const { theme } = useContext(ThemeContext)
+	const theme = useSelector((state: IStoreState) => state.ui.theme);
     
     return (
         <div className="page-container" data-theme={`${theme}`}>

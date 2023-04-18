@@ -1,24 +1,9 @@
 import './Input.css'
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
-
-interface IInput{
-    type: string,
-    id:string,
-    name: string,
-    value?: string,
-    label?: string,
-    placeholder?: string,
-    isEnable?: boolean,
-    isEmpty: boolean,
-    isValid:boolean,
-    isRequired?: boolean,
-    error?: string,
-    callback: Function,
-}
+import { useSelector } from "react-redux";
+import { IStoreState, IInput } from '../../types';
 
 const Input = ({ type, id, name, label, value, placeholder, isEnable, isEmpty, isValid, isRequired, error, callback }: IInput) => {
-    const { theme } = useContext(ThemeContext)
+    const theme = useSelector((state: IStoreState) => state.ui.theme)
     
     const labelComponent = label ? <label className='input__label' htmlFor={name}>{label}</label> : ''
     return (

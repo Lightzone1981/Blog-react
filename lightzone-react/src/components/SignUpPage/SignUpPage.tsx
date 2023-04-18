@@ -6,8 +6,8 @@ const SignUpPage = () => {
     return (
         <main className="main">
             <div className="title-wrapper">
-                <Link to={'/posts'} style={{textDecoration:'none'}}>
-                    <a href="#" className="back-home-link">Back to home</a>
+                <Link to={'/posts'} className="back-home-link" style={{textDecoration:'none'}}>
+                    Back to home
                 </Link>
                 <h1 className="page-title">Sign Up</h1>
             </div>
