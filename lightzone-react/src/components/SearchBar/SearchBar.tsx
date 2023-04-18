@@ -15,13 +15,12 @@ const SearchBar = () => {
                     setSearchInputVisible(false)
                 }}/>
             </div>
-            <button className="search-bar__show-button" onClick={(e) => { 
+            <button className="search-bar__show-button" title ='Search posts' onClick={(e) => { 
                 e.preventDefault();
                 setSearchInputVisible(true); 
                 setText('')
             }}>
                 <SearchIcon width='24' height='24' color='#FFF'/>
-                {/* <img className="search-bar__show-button-icon" src={"./icons/search-icon.svg"} alt="search icon" /> */}
             </button>
         </form>
     )

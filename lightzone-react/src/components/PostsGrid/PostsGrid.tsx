@@ -2,22 +2,31 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import PostRow from "./PostRow";
 import { PostsGridPagination } from "../PostsGridPagination";
 import { Loader } from "../Loader";
-import { IPostInfo } from '../../types';
+import { IPostInfo, IStoreState } from '../../types';
 import getRowsArray from '../../utils/getRowsArray';
 import getPagesPostsArray from '../../utils/getPagesPostsArray';
 import { mockDataPosts, ROW_VIEWS} from "../../constants/posts-constants";
 import "./PostGrid.css";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux/es/exports";
+import { setPosts } from "../../redux/action-creators/posts_action_creators";
 
 const PostsGrid = () => {
 	const [windowSize, setWindowSize] = useState({
 		height: window.innerHeight,
 		width: window.innerWidth,
 	});
-	
-	const [allPosts, setAllPosts] = useState([] as IPostInfo[])
-	const [paginationActiveItem, setPaginationActiveItem] = useState(1)
+	const dispatch = useDispatch();
 
-	const postsPagesArray = useMemo(() => getPagesPostsArray(mockDataPosts), [mockDataPosts]) 
+	const [paginationActiveItem, setPaginationActiveItem] = useState(1)
+	
+	useEffect(() => {
+		setTimeout(() => dispatch(setPosts(mockDataPosts)) , 1000)
+	}, [])
+	
+	const allPosts = useSelector((state: IStoreState) => state.posts.posts);
+	const postsPagesArray = useMemo(() => getPagesPostsArray(mockDataPosts), [mockDataPosts])
+	  
 
 	const handlePaginationClick = (e: any) => {
 
@@ -34,11 +43,6 @@ const PostsGrid = () => {
 			setPaginationActiveItem(paginationActiveItem + 1)
 		}
 	}
-
-
-	useEffect(() => {
-		setTimeout(() => { setAllPosts(postsPagesArray[paginationActiveItem-1]) }, 1000)
-	}, [])
 
 	useEffect(() => {
 		function handleResize() {

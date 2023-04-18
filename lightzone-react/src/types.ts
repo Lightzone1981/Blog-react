@@ -1,3 +1,25 @@
+export interface IStoreState{
+    posts: IPostState
+    ui: IUiState
+    user:IUserState
+}
+
+export interface IPostState{
+    posts: IPostInfo[],
+    selectedPost: IPostInfo
+}
+
+export interface IUiState{
+    theme: string,
+    burgerStatus: boolean,
+    postModalVisibleStatus:boolean,
+    profileModalVisibleStatus:boolean,
+}
+
+export interface IUserState{
+    authorizedUserName : string,
+}
+
 export interface IPostInfo {
     id: number,
     image: string,
@@ -66,4 +88,19 @@ export interface IIcon {
 export interface IAuthorize{
     status: boolean,
     username:string
-  }
+}
+  
+export interface IInput{
+    type: string,
+    id:string,
+    name: string,
+    value?: string,
+    label?: string,
+    placeholder?: string,
+    isEnable?: boolean,
+    isEmpty: boolean,
+    isValid:boolean,
+    isRequired?: boolean,
+    error?: string,
+    callback: Function,
+}

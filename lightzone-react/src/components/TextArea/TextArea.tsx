@@ -1,4 +1,3 @@
-import { useState } from "react"
 import './TextArea.css'
 
 interface ITextArea{

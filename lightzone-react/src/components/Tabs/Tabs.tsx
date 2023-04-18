@@ -1,7 +1,8 @@
 import './Tabs.css'
 import Tab from './Tab'
-import { ThemeContext } from "../../contexts/themeContext";
-import { useState, useContext } from 'react';
+import { IStoreState } from "../../types";
+import { useState} from 'react';
+import { useSelector } from 'react-redux';
 
 interface ITabsArr{
     id:number,
@@ -10,7 +11,7 @@ interface ITabsArr{
 }
 
 const Tabs = () => {
-    const { theme } = useContext(ThemeContext)
+	const theme = useSelector((state: IStoreState) => state.ui.theme);
     
     const tabsArr:ITabsArr[] = [
         { id:1, label: 'All'},

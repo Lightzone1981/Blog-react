@@ -109,7 +109,7 @@ height: calc(100vh - 5.25rem - 1px);
     }
     .page-title{
         font-size: 2rem;
-        padding: 0;
+        padding: 0.5rem 0;
     }
     .main{
         gap:2rem;

@@ -1,11 +1,11 @@
 import './PostPagination.css'
 import ArrowIcon from '../Icons/ArrowIcon';
-import { IPagination } from '../../types';
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
+import { IPagination, IStoreState } from '../../types';
+import { useSelector } from 'react-redux';
 
 const PostPagination = ({ activeItem, itemsCount, callback }: IPagination) => {
-    const { theme } = useContext(ThemeContext)
+    
+    const theme = useSelector((state: IStoreState) => state.ui.theme);
 
     return (
         <section className="pagination" data-theme={`${theme}`}>

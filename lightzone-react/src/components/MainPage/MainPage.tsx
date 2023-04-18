@@ -1,10 +1,7 @@
 import { PostsGrid } from "../PostsGrid";
 import { Tabs } from "../Tabs";
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
 
 const MainPage = () => {
-    const { theme } = useContext(ThemeContext)
     return (
         <>
         <main className="main">

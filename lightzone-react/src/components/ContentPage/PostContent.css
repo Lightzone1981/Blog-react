@@ -6,6 +6,21 @@
 	font-size: 1rem;
 }
 
+.post__modal-button{
+	color: #8d8e97;
+	border: 1px solid #8d8e97;
+	border-radius: 2px;
+	padding: 0.5rem 1rem;
+	margin-left: auto;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.post__modal-button:hover{
+	background-color: #8d8e97;
+	color: #fff;
+}
+
 .post__id {
 	color: #8d8e97;
 }

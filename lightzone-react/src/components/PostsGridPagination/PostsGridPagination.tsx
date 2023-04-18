@@ -1,11 +1,10 @@
 import './PostsGridPagination.css'
-import { IPagination } from '../../types';
-import { ThemeContext } from "../../contexts/themeContext";
-import { useContext } from 'react';
+import { IPagination, IStoreState } from '../../types';
 import ArrowIcon from '../Icons/ArrowIcon';
+import { useSelector } from 'react-redux';
 
 const PostsGridPagination = ({ activeItem, itemsCount, callback }: IPagination) => {
-    const { theme } = useContext(ThemeContext)
+	const theme = useSelector((state: IStoreState) => state.ui.theme);
     
     let itemsArr: string[] = []
 

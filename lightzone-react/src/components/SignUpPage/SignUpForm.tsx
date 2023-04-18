@@ -10,9 +10,6 @@ const [nameText, setNameText] = useState('')
 const [emailText, setEmailText] = useState('')
 const [passwordText, setPasswordText] = useState('')
 const [passwordConfirmText, setPasswordConfirmText] = useState('')
-    // useEffect(() => {
-    //     const isPasswordConfirm:boolean = passwordText === passwordConfirmText? true:false
-    // }, [passwordText, passwordConfirmText])
     
     return (
         <form className="sign-up-form">
